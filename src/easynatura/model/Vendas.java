@@ -2,10 +2,10 @@ package easynatura.model;
 
 import java.util.ArrayList;
 
-public class ControleDeCaixa {
+public class Vendas {
 	private ArrayList <Venda> vendas;
 	
-	public ControleDeCaixa() {
+	public Vendas() {
 		this.setVendas(new ArrayList<Venda>());
 	}
 
