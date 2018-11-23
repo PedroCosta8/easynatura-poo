@@ -6,6 +6,10 @@
 package easyNatura.model;
 
 import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,11 +22,15 @@ public class Venda {
     private Produto produto;
     private Date data;
 
-    public Venda(int id, Cliente cliente, Produto produto, Date data) {
+    public Venda(int id, Cliente cliente, Produto produto, String data) {
         this.id = id;
         this.cliente = cliente;
         this.produto = produto;
-        this.data = data;
+        try {
+            this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+        } catch (ParseException ex) {
+            Logger.getLogger(Venda.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public int getId() {
@@ -51,6 +59,14 @@ public class Venda {
 
     public Date getData() {
         return data;
+    }
+    
+    public String getDataFormatada(){
+        return new SimpleDateFormat("dd/MM/yyyy").format(data);
+    }
+
+    public String getHoraFormatada(){
+        return new SimpleDateFormat("HH:mm").format(data);
     }
 
     public void setData(Date data) {

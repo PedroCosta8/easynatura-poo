@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class VendaDAO {
     
-    public void insert(Venda venda){
+    public void inserir(Venda venda){
           
         if(venda.getId() == 0){
             venda.setId(proximoId());
@@ -22,11 +22,11 @@ public class VendaDAO {
         }   
     }
     
-    public boolean update(Venda agendamento){
+    public boolean atualizar(Venda venda){
         
         for (int i = 0; i < Banco.venda.size(); i++) {
-            if(idSaoIguais(Banco.venda.get(i),agendamento)){
-                Banco.venda.set(i, agendamento);
+            if(idSaoIguais(Banco.venda.get(i),venda)){
+                Banco.venda.set(i, venda);
                 return true;
             }
         }
@@ -34,11 +34,11 @@ public class VendaDAO {
 
     }
     
-    public ArrayList<Venda> selectAll(){
+    public ArrayList<Venda> retornaTodos(){
         return Banco.venda;
     }
     
-    public boolean delete(Venda venda){
+    public boolean deletar(Venda venda){
         for (Venda vendaLista : Banco.venda) {
             if(idSaoIguais(vendaLista,venda)){
                 Banco.venda.remove(vendaLista);

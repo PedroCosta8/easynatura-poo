@@ -15,7 +15,10 @@ import java.util.ArrayList;
 public class ClienteDAO {
     
     public void inserir(Cliente cliente){
-        Banco.cliente.add(cliente);
+        if(cliente.getId() == 0){
+            cliente.setId(proximoId());
+            Banco.cliente.add(cliente);
+        }
     }
     
     public boolean atualizar(Cliente cliente){
@@ -32,6 +35,22 @@ public class ClienteDAO {
     
     public ArrayList<Cliente> retornaTodos(){
         return Banco.cliente;
+    }
+    
+    private int proximoId(){
+        
+        int maiorId = 0;
+        
+        for (Cliente cliente : Banco.cliente) {           
+           int id = cliente.getId();
+            
+            if(maiorId < id){
+                maiorId = id;
+            }
+            
+        }
+        
+        return maiorId + 1;
     }
     
     public boolean deletar(Cliente cliente){

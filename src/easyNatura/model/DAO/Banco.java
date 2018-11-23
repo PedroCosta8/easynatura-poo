@@ -30,5 +30,11 @@ public class Banco {
         
         Usuario usuario1 = new Usuario(0, "administrador", "0000", "admin@admin.com", "admin", "admin");
         usuario.add(usuario1);
+        
+        Cliente cliente1 = new Cliente(0, "Maria", "99999","Rua sei la", "6969-666");
+        cliente.add(cliente1);
+        
+        Produto produto1 = new Produto(0, "batom", 20, 12);
+        produto.add(produto1);
     }
 }

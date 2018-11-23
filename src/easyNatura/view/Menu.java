@@ -34,8 +34,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        cadastrar = new javax.swing.JMenu();
-        cadastrarFuncionario = new javax.swing.JMenuItem();
+        cliente = new javax.swing.JMenu();
         cadastrarCliente = new javax.swing.JMenuItem();
         venda = new javax.swing.JMenu();
         efetuarVenda = new javax.swing.JMenuItem();
@@ -43,21 +42,14 @@ public class Menu extends javax.swing.JFrame {
         estoque = new javax.swing.JMenu();
         cadastrarProduto = new javax.swing.JMenuItem();
         listarProdutos = new javax.swing.JMenuItem();
+        Funcionario = new javax.swing.JMenu();
+        cadastrarFuncionario1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/imagem-base1.png"))); // NOI18N
 
-        cadastrar.setText("cadastro");
-
-        cadastrarFuncionario.setForeground(java.awt.Color.black);
-        cadastrarFuncionario.setText("Cadastrar Funcionário");
-        cadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarFuncionarioActionPerformed(evt);
-            }
-        });
-        cadastrar.add(cadastrarFuncionario);
+        cliente.setText("cliente");
 
         cadastrarCliente.setForeground(java.awt.Color.black);
         cadastrarCliente.setText("Cadastrar Cliente");
@@ -66,9 +58,9 @@ public class Menu extends javax.swing.JFrame {
                 cadastrarClienteActionPerformed(evt);
             }
         });
-        cadastrar.add(cadastrarCliente);
+        cliente.add(cadastrarCliente);
 
-        jMenuBar1.add(cadastrar);
+        jMenuBar1.add(cliente);
 
         venda.setText("venda");
 
@@ -114,6 +106,19 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(estoque);
 
+        Funcionario.setText("Funcionário");
+
+        cadastrarFuncionario1.setForeground(java.awt.Color.black);
+        cadastrarFuncionario1.setText("Cadastrar Funcionário");
+        cadastrarFuncionario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarFuncionario1ActionPerformed(evt);
+            }
+        });
+        Funcionario.add(cadastrarFuncionario1);
+
+        jMenuBar1.add(Funcionario);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -135,11 +140,6 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cadastrarClienteActionPerformed
 
-    private void cadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFuncionarioActionPerformed
-        controller.inciaCadFunc();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cadastrarFuncionarioActionPerformed
-
     private void efetuarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_efetuarVendaActionPerformed
         controller.iniciaEfetuarVenda();
         // TODO add your handling code here:
@@ -159,6 +159,11 @@ public class Menu extends javax.swing.JFrame {
         controller.iniciaListarProdutos();
         // TODO add your handling code here:
     }//GEN-LAST:event_listarProdutosActionPerformed
+
+    private void cadastrarFuncionario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFuncionario1ActionPerformed
+        controller.inciaCadFunc();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastrarFuncionario1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,10 +201,11 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu cadastrar;
+    private javax.swing.JMenu Funcionario;
     private javax.swing.JMenuItem cadastrarCliente;
-    private javax.swing.JMenuItem cadastrarFuncionario;
+    private javax.swing.JMenuItem cadastrarFuncionario1;
     private javax.swing.JMenuItem cadastrarProduto;
+    private javax.swing.JMenu cliente;
     private javax.swing.JMenuItem efetuarVenda;
     private javax.swing.JMenu estoque;
     private javax.swing.JLabel jLabel1;

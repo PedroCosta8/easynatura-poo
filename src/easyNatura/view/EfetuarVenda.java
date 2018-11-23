@@ -5,6 +5,10 @@
  */
 package easyNatura.view;
 
+import easyNatura.controller.EfetuarVendaController;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author pedro
@@ -14,8 +18,12 @@ public class EfetuarVenda extends javax.swing.JFrame {
     /**
      * Creates new form EfetuarVenda
      */
+    private final EfetuarVendaController controller;
+    
     public EfetuarVenda() {
         initComponents();
+        controller = new EfetuarVendaController(this);
+        iniciar();
     }
 
     /**
@@ -27,21 +35,81 @@ public class EfetuarVenda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jComboBoxCliente = new javax.swing.JComboBox<>();
+        jComboBoxProduto = new javax.swing.JComboBox<>();
+        jTextFieldQuantidade = new javax.swing.JTextField();
+        jTextFieldData = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jComboBoxCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxClienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBoxCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 450, -1));
+
+        jComboBoxProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        jComboBoxProduto.setSelectedIndex(-1);
+        getContentPane().add(jComboBoxProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 450, -1));
+
+        jTextFieldQuantidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldQuantidadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 450, -1));
+        getContentPane().add(jTextFieldData, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 450, -1));
+
+        jButton1.setText("Efetuar Venda");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 330, 390, 50));
+
+        jLabel2.setForeground(java.awt.Color.white);
+        jLabel2.setText("Cliente");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+
+        jLabel3.setForeground(java.awt.Color.white);
+        jLabel3.setText("Produto");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
+
+        jLabel4.setForeground(java.awt.Color.white);
+        jLabel4.setText("Quantidade");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, -1));
+
+        jLabel5.setForeground(java.awt.Color.white);
+        jLabel5.setText("Data");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/imagem-base1.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBoxClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxClienteActionPerformed
+
+    private void jTextFieldQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldQuantidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldQuantidadeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        controller.efetuarVenda();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +147,53 @@ public class EfetuarVenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBoxCliente;
+    private javax.swing.JComboBox<String> jComboBoxProduto;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField jTextFieldData;
+    private javax.swing.JTextField jTextFieldQuantidade;
     // End of variables declaration//GEN-END:variables
+
+    private void iniciar(){
+        controller.atualizaCliente();
+        controller.atualizaProduto();
+    }
+    
+    public JComboBox<String> getjComboBoxCliente() {
+        return jComboBoxCliente;
+    }
+
+    public void setjComboBoxCliente(JComboBox<String> jComboBoxCliente) {
+        this.jComboBoxCliente = jComboBoxCliente;
+    }
+
+    public JComboBox<String> getjComboBoxProduto() {
+        return jComboBoxProduto;
+    }
+
+    public void setjComboBoxProduto(JComboBox<String> jComboBoxProduto) {
+        this.jComboBoxProduto = jComboBoxProduto;
+    }
+
+    public JTextField getjTextFieldData() {
+        return jTextFieldData;
+    }
+
+    public void setjTextFieldData(JTextField jTextFieldData) {
+        this.jTextFieldData = jTextFieldData;
+    }
+
+    public JTextField getjTextFieldQuantidade() {
+        return jTextFieldQuantidade;
+    }
+
+    public void setjTextFieldQuantidade(JTextField jTextFieldQuantidade) {
+        this.jTextFieldQuantidade = jTextFieldQuantidade;
+    }
+    
 }

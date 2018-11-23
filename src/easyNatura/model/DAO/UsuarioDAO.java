@@ -15,7 +15,11 @@ import java.util.ArrayList;
 public class UsuarioDAO {
     
     public void inserir(Usuario usuario){
-        Banco.usuario.add(usuario);
+          
+        if(usuario.getId() == 0){
+            usuario.setId(proximoId());
+            Banco.usuario.add(usuario);
+        }   
     }
     
     public boolean atualizar(Usuario usuario){ //vai sobrescrever o usuario antigo e retornar true
@@ -59,5 +63,20 @@ public class UsuarioDAO {
     
     private boolean idSaoIguais(Usuario usuario, Usuario usuarioAComparar) {
         return usuario.getId() ==  usuarioAComparar.getId();
+    }
+    
+    private int proximoId(){
+        
+        int maiorId = 0;
+        
+        for (Usuario usuario : Banco.usuario) {           
+           int id = usuario.getId();
+            
+            if(maiorId < id){
+                maiorId = id;
+            }
+        }
+        
+        return maiorId + 1;
     }
 }
