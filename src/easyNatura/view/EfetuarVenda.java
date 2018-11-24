@@ -7,6 +7,7 @@ package easyNatura.view;
 
 import easyNatura.controller.EfetuarVendaController;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JTextField;
 
 /**
@@ -38,12 +39,12 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jComboBoxCliente = new javax.swing.JComboBox<>();
         jComboBoxProduto = new javax.swing.JComboBox<>();
         jTextFieldQuantidade = new javax.swing.JTextField();
-        jTextFieldData = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -66,7 +67,6 @@ public class EfetuarVenda extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 450, -1));
-        getContentPane().add(jTextFieldData, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 450, -1));
 
         jButton1.setText("Efetuar Venda");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -91,6 +91,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jLabel5.setForeground(java.awt.Color.white);
         jLabel5.setText("Data");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
+        getContentPane().add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 450, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/imagem-base1.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -150,12 +151,12 @@ public class EfetuarVenda extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBoxCliente;
     private javax.swing.JComboBox<String> jComboBoxProduto;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextFieldData;
     private javax.swing.JTextField jTextFieldQuantidade;
     // End of variables declaration//GEN-END:variables
 
@@ -180,13 +181,14 @@ public class EfetuarVenda extends javax.swing.JFrame {
         this.jComboBoxProduto = jComboBoxProduto;
     }
 
-    public JTextField getjTextFieldData() {
-        return jTextFieldData;
+    public JFormattedTextField getjFormattedTextField1() {
+        return jFormattedTextField1;
     }
 
-    public void setjTextFieldData(JTextField jTextFieldData) {
-        this.jTextFieldData = jTextFieldData;
+    public void setjFormattedTextField1(JFormattedTextField jFormattedTextField1) {
+        this.jFormattedTextField1 = jFormattedTextField1;
     }
+
 
     public JTextField getjTextFieldQuantidade() {
         return jTextFieldQuantidade;

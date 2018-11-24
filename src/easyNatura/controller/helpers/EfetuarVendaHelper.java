@@ -45,8 +45,9 @@ public class EfetuarVendaHelper {
     public Venda getVenda(){
         Cliente cliente = (Cliente) view.getjComboBoxCliente().getModel().getSelectedItem();
         Produto produto = (Produto) view.getjComboBoxProduto().getModel().getSelectedItem();
-        String data = view.getjTextFieldData().getText();
-        Venda clone = new Venda(0, cliente, produto, data);
+        String data = view.getjFormattedTextField1().getText();
+        int qtd = Integer.parseInt(view.getjTextFieldQuantidade().getText());
+        Venda clone = new Venda(0, cliente, produto, data, qtd);
         return clone;
     }
     

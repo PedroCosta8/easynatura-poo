@@ -36,5 +36,14 @@ public class Banco {
         
         Produto produto1 = new Produto(0, "batom", 20, 12);
         produto.add(produto1);
+        
+        Produto produto2 = new Produto(0, "rimel", 10, 22);
+        produto.add(produto2);
+        
+        Venda venda1 = new Venda(0, cliente1, produto1, "01/01/2018", 15);
+        venda.add(venda1);
+        
+        Venda venda2 = new Venda(0, cliente1, produto2, "02/01/2018", 22);
+        venda.add(venda2);
     }
 }

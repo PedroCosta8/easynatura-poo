@@ -9,6 +9,7 @@ import easyNatura.view.CadastrarCliente;
 import easyNatura.view.CadastrarFuncionario;
 import easyNatura.view.CadastrarProduto;
 import easyNatura.view.EfetuarVenda;
+import easyNatura.view.ListarProdutos;
 import easyNatura.view.ListarVendas;
 import easyNatura.view.Menu;
 
@@ -50,7 +51,7 @@ public class MenuController {
     }
     
     public void iniciaListarProdutos(){
-        ListarVendas listarP = new ListarVendas();
+        ListarProdutos listarP = new ListarProdutos();
         listarP.setVisible(true);
     }
 }

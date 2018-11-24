@@ -21,8 +21,9 @@ public class Venda {
     private Cliente cliente;
     private Produto produto;
     private Date data;
+    private int quantidade;
 
-    public Venda(int id, Cliente cliente, Produto produto, String data) {
+    public Venda(int id, Cliente cliente, Produto produto, String data, int quantidade) {
         this.id = id;
         this.cliente = cliente;
         this.produto = produto;
@@ -31,6 +32,7 @@ public class Venda {
         } catch (ParseException ex) {
             Logger.getLogger(Venda.class.getName()).log(Level.SEVERE, null, ex);
         }
+        this.quantidade = quantidade;
     }
 
     public int getId() {
@@ -72,6 +74,16 @@ public class Venda {
     public void setData(Date data) {
         this.data = data;
     }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+    
+    
     
     
 }
