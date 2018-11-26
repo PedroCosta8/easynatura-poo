@@ -33,6 +33,7 @@ public class LoginController {
         if(usuarioAutenticado != null){
             Menu menu = new Menu();
             menu.setVisible(true);
+            this.view.mostraMensagem("Bem-vindo " + usuarioAutenticado.getNome());
             this.view.dispose();
         }
         else{

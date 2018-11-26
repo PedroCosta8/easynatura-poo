@@ -49,9 +49,8 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/imagem-base1.png"))); // NOI18N
 
-        cliente.setText("cliente");
+        cliente.setText("Cliente");
 
-        cadastrarCliente.setForeground(java.awt.Color.black);
         cadastrarCliente.setText("Cadastrar Cliente");
         cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,9 +61,8 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(cliente);
 
-        venda.setText("venda");
+        venda.setText("Venda");
 
-        efetuarVenda.setForeground(java.awt.Color.black);
         efetuarVenda.setText("Efetuar Venda");
         efetuarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +71,6 @@ public class Menu extends javax.swing.JFrame {
         });
         venda.add(efetuarVenda);
 
-        listarVendas.setForeground(java.awt.Color.black);
         listarVendas.setText("Listar Vendas");
         listarVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,9 +81,8 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(venda);
 
-        estoque.setText("estoque");
+        estoque.setText("Estoque");
 
-        cadastrarProduto.setForeground(java.awt.Color.black);
         cadastrarProduto.setText("Cadastrar Produto");
         cadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +91,6 @@ public class Menu extends javax.swing.JFrame {
         });
         estoque.add(cadastrarProduto);
 
-        listarProdutos.setForeground(java.awt.Color.black);
         listarProdutos.setText("Listar Produtos");
         listarProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +103,6 @@ public class Menu extends javax.swing.JFrame {
 
         Funcionario.setText("Funcionário");
 
-        cadastrarFuncionario1.setForeground(java.awt.Color.black);
         cadastrarFuncionario1.setText("Cadastrar Funcionário");
         cadastrarFuncionario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
