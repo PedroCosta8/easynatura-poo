@@ -7,6 +7,8 @@ package easyNatura.view;
 
 import easyNatura.controller.LoginController;
 import easyNatura.model.DAO.Banco;
+import easyNatura.model.DAO.UsuarioDAO;
+import easyNatura.model.Usuario;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -49,7 +51,6 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("easyNatura - Login");
-        setPreferredSize(new java.awt.Dimension(750, 421));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextLogin.setBackground(new java.awt.Color(204, 204, 204));
@@ -117,6 +118,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextLoginActionPerformed

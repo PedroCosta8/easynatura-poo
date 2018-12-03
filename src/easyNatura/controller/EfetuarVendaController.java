@@ -55,17 +55,17 @@ public class EfetuarVendaController {
         Venda venda = helper.getVenda();
         VendaDAO vendaDAO = new VendaDAO();
         vendaDAO.inserir(venda);
-        ArrayList<Venda> listaVendas = Banco.venda;
-
-              for(int i = 0; i < listaVendas.size(); i++){
-                  
-                System.out.println(listaVendas.get(i).getId());
-                System.out.println(listaVendas.get(i).getCliente());
-                System.out.println(listaVendas.get(i).getProduto());
-                System.out.println(listaVendas.get(i).getDataFormatada()
-                );
-              }
-        System.out.println(listaVendas.size());
+//        ArrayList<Venda> listaVendas = Banco.vendas;
+//
+//              for(int i = 0; i < listaVendas.size(); i++){
+//                  
+//                System.out.println(listaVendas.get(i).getId());
+//                System.out.println(listaVendas.get(i).getCliente());
+//                System.out.println(listaVendas.get(i).getProduto());
+//                System.out.println(listaVendas.get(i).getDataFormatada()
+//                );
+//              }
+//        System.out.println(listaVendas.size());
         view.dispose();
     }
 }

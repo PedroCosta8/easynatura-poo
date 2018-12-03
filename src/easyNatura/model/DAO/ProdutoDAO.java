@@ -5,8 +5,14 @@
  */
 package easyNatura.model.DAO;
 
+import com.google.gson.Gson;
 import easyNatura.model.Produto;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,33 +23,76 @@ public class ProdutoDAO {
     public void inserir(Produto produto){
           
         if(produto.getId() == 0){
+            Gson gson = new Gson();
+            String json;
             produto.setId(proximoId());
-            Banco.produto.add(produto);
+            if(Banco.produtos != null){
+                Banco.produtos.add(produto);
+                json = gson.toJson(Banco.produtos, Banco.typeProduto);
+            }
+            else{
+                ArrayList<Produto> p = new ArrayList<>();
+                p.add(produto);
+                json = gson.toJson(p, Banco.typeProduto);
+            }
+            File arquivo = new File("produtos.json");
+        try {
+                try (FileWriter grava = new FileWriter(arquivo); PrintWriter escreve = new PrintWriter(grava)) {
+                    escreve.println(json);
+                }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "Não foi possível salvar");
+        }
         }   
     }
     
     public boolean atualizar(Produto produto){
-        
-        for (int i = 0; i < Banco.produto.size(); i++) {
-            if(idSaoIguais(Banco.produto.get(i),produto)){
-                Banco.produto.set(i, produto);
+        Gson gson = new Gson();
+        String json;
+        if(Banco.produtos != null){
+          for (int i = 0; i < Banco.produtos.size(); i++) {
+            if(idSaoIguais(Banco.produtos.get(i),produto)){
+                Banco.produtos.set(i, produto);
+                json = gson.toJson(Banco.produtos, Banco.typeProduto);
+                File arquivo = new File("produtos.json");
+                try {
+                    try (FileWriter grava = new FileWriter(arquivo); PrintWriter escreve = new PrintWriter(grava)) {
+                        escreve.println(json);
+                    }
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(null, "Não foi possível atualizar");;
+                }
                 return true;
             }
+          }  
         }
         return false;      
 
     }
     
     public ArrayList<Produto> retornaTodos(){
-        return Banco.produto;
+        return Banco.produtos;
     }
     
-    public boolean deletar(Produto venda){
-        for (Produto produtoLista : Banco.produto) {
-            if(idSaoIguais(produtoLista,venda)){
-                Banco.produto.remove(produtoLista);
+    public boolean deletar(Produto produto){
+        Gson gson = new Gson();
+        String json;
+        if(Banco.produtos != null){
+          for (Produto produtoLista : Banco.produtos) {
+            if(idSaoIguais(produtoLista,produto)){
+                Banco.produtos.remove(produtoLista);
+                json = gson.toJson(Banco.produtos, Banco.typeProduto);
+                File arquivo = new File("produtos.json");
+                try {
+                    try (FileWriter grava = new FileWriter(arquivo); PrintWriter escreve = new PrintWriter(grava)) {
+                        escreve.println(json);
+                    }
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(null, "Não foi possível deletar");
+                }
                 return true;
             }
+          }  
         }
         return false;
     }
@@ -53,17 +102,19 @@ public class ProdutoDAO {
     }
     
     
-    private int proximoId(){
+    private int proximoId(){;
         
         int maiorId = 0;
-        
-        for (Produto produto : Banco.produto) {           
+        if(Banco.produtos != null){
+          for (Produto produto : Banco.produtos) {           
            int id = produto.getId();
             
             if(maiorId < id){
                 maiorId = id;
             }
+          }  
         }
+        
         
         return maiorId + 1;
     }

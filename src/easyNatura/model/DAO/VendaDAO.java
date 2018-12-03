@@ -5,8 +5,14 @@
  */
 package easyNatura.model.DAO;
 
+import com.google.gson.Gson;
 import easyNatura.model.Venda;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,33 +23,76 @@ public class VendaDAO {
     public void inserir(Venda venda){
           
         if(venda.getId() == 0){
+            Gson gson = new Gson();
+            String json;
             venda.setId(proximoId());
-            Banco.venda.add(venda);
+            if(Banco.vendas != null){
+                Banco.vendas.add(venda);
+                json = gson.toJson(Banco.vendas, Banco.typeVenda);
+            }
+            else{
+                ArrayList<Venda> v = new ArrayList<>();
+                v.add(venda);
+                json = gson.toJson(v, Banco.typeVenda);
+            }
+            File arquivo = new File("vendas.json");
+        try {
+                try (FileWriter grava = new FileWriter(arquivo); PrintWriter escreve = new PrintWriter(grava)) {
+                    escreve.println(json);
+                }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "Não foi possível salvar");
+        }
         }   
     }
     
     public boolean atualizar(Venda venda){
-        
-        for (int i = 0; i < Banco.venda.size(); i++) {
-            if(idSaoIguais(Banco.venda.get(i),venda)){
-                Banco.venda.set(i, venda);
+        Gson gson = new Gson();
+        String json;
+        if(Banco.vendas != null){
+          for (int i = 0; i < Banco.vendas.size(); i++) {
+            if(idSaoIguais(Banco.vendas.get(i),venda)){
+                Banco.vendas.set(i, venda);
+                json = gson.toJson(Banco.vendas, Banco.typeVenda);
+                File arquivo = new File("vendas.json");
+                try {
+                    try (FileWriter grava = new FileWriter(arquivo); PrintWriter escreve = new PrintWriter(grava)) {
+                        escreve.println(json);
+                    }
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(null, "Não foi possível atualizar");;
+                }
                 return true;
             }
+          }  
         }
         return false;      
 
     }
     
     public ArrayList<Venda> retornaTodos(){
-        return Banco.venda;
+        return Banco.vendas;
     }
     
     public boolean deletar(Venda venda){
-        for (Venda vendaLista : Banco.venda) {
+        Gson gson = new Gson();
+        String json;
+        if(Banco.vendas != null){
+          for (Venda vendaLista : Banco.vendas) {
             if(idSaoIguais(vendaLista,venda)){
-                Banco.venda.remove(vendaLista);
+                Banco.vendas.remove(vendaLista);
+                json = gson.toJson(Banco.vendas, Banco.typeVenda);
+                File arquivo = new File("vendas.json");
+                try {
+                    try (FileWriter grava = new FileWriter(arquivo); PrintWriter escreve = new PrintWriter(grava)) {
+                        escreve.println(json);
+                    }
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(null, "Não foi possível deletar");
+                }
                 return true;
             }
+          }  
         }
         return false;
     }
@@ -53,17 +102,19 @@ public class VendaDAO {
     }
     
     
-    private int proximoId(){
+    private int proximoId(){;
         
         int maiorId = 0;
-        
-        for (Venda venda : Banco.venda) {           
+        if(Banco.vendas != null){
+          for (Venda venda : Banco.vendas) {           
            int id = venda.getId();
             
             if(maiorId < id){
                 maiorId = id;
             }
+          }  
         }
+        
         
         return maiorId + 1;
     }

@@ -5,11 +5,19 @@
  */
 package easyNatura.model.DAO;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import easyNatura.model.Cliente;
 import easyNatura.model.Produto;
 import easyNatura.model.Usuario;
 import easyNatura.model.Venda;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
 import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,33 +25,66 @@ import java.util.ArrayList;
  */
 public class Banco {
     
-    public static ArrayList<Usuario> usuario;
-    public static ArrayList<Cliente> cliente;
-    public static ArrayList<Venda> venda;
-    public static ArrayList<Produto> produto;
+    public static ArrayList<Produto> produtos;
+    public static java.lang.reflect.Type typeProduto = new TypeToken<List<Produto>>(){}.getType();
+    public static ArrayList<Cliente> clientes;
+    public static java.lang.reflect.Type typeCliente = new TypeToken<List<Cliente>>(){}.getType();
+    public static ArrayList<Usuario> usuarios;
+    public static java.lang.reflect.Type typeUsuario = new TypeToken<List<Usuario>>(){}.getType();
+    public static ArrayList<Venda> vendas;
+    public static java.lang.reflect.Type typeVenda = new TypeToken<List<Venda>>(){}.getType();
     
     public static void inicia(){
-        usuario = new ArrayList<>();
-        cliente = new ArrayList<>();
-        venda = new ArrayList<>();
-        produto = new ArrayList<>();
+        Banco.produtos = new ArrayList<>();
+        try {
+            
+            File filePath = new File("produtos.json");
+            Reader reader = new FileReader(filePath);
+            Gson gson = new Gson();
+            Banco.produtos = gson.fromJson(reader, Banco.typeProduto);
+           
+        } 
+        catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Arquivo com os produtos não foi carregado com sucesso");
+        }
         
-        Usuario usuario1 = new Usuario(0, "administrador", "0000", "admin@admin.com", "admin", "admin");
-        usuario.add(usuario1);
+        Banco.clientes = new ArrayList<>();
+        try {
+            
+            File filePath = new File("clientes.json");
+            Reader reader = new FileReader(filePath);
+            Gson gson = new Gson();
+            Banco.clientes = gson.fromJson(reader, Banco.typeCliente);
+           
+        } 
+        catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Arquivo com os clientes não foi carregado com sucesso");
+        }
         
-        Cliente cliente1 = new Cliente(0, "Maria", "99999","Rua sei la", "6969-666");
-        cliente.add(cliente1);
+        Banco.usuarios = new ArrayList<>();
+        try {
+            
+            File filePath = new File("usuarios.json");
+            Reader reader = new FileReader(filePath);
+            Gson gson = new Gson();
+            Banco.usuarios = gson.fromJson(reader, Banco.typeUsuario);
+           
+        } 
+        catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Arquivo com os usuários não foi carregado com sucesso");
+        }
         
-        Produto produto1 = new Produto(0, "batom", 20, 12);
-        produto.add(produto1);
-        
-        Produto produto2 = new Produto(0, "rimel", 10, 22);
-        produto.add(produto2);
-        
-        Venda venda1 = new Venda(0, cliente1, produto1, "01/01/2018", 15);
-        venda.add(venda1);
-        
-        Venda venda2 = new Venda(0, cliente1, produto2, "02/01/2018", 22);
-        venda.add(venda2);
+        Banco.vendas = new ArrayList<>();
+        try {
+            
+            File filePath = new File("vendas.json");
+            Reader reader = new FileReader(filePath);
+            Gson gson = new Gson();
+            Banco.vendas = gson.fromJson(reader, Banco.typeVenda);
+           
+        } 
+        catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Arquivo com as vendas não foi carregado com sucesso");
+        }
     }
 }

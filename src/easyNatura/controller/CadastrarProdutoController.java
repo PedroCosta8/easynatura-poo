@@ -31,17 +31,17 @@ public class CadastrarProdutoController {
         
         ProdutoDAO produtoDAO = new ProdutoDAO();
         produtoDAO.inserir(produto);
-        ArrayList<Produto> listaProdutos = Banco.produto;
-
-              for(int i = 0; i < listaProdutos.size(); i++){
-                  
-                System.out.println(listaProdutos.get(i).getId());
-                System.out.println(listaProdutos.get(i).getNome());
-                System.out.println(listaProdutos.get(i).getValor());
-                System.out.println(listaProdutos.get(i).getQuantidade()
-                );
-              }
-        System.out.println(listaProdutos.size());
+//        ArrayList<Produto> listaProdutos = Banco.produtos;
+//
+//              for(int i = 0; i < listaProdutos.size(); i++){
+//                  
+//                System.out.println(listaProdutos.get(i).getId());
+//                System.out.println(listaProdutos.get(i).getNome());
+//                System.out.println(listaProdutos.get(i).getValor());
+//                System.out.println(listaProdutos.get(i).getQuantidade()
+//                );
+//              }
+//        System.out.println(listaProdutos.size;
         view.dispose();
     }
     
