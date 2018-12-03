@@ -60,7 +60,11 @@ public class CadastrarCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 370, -1));
+
+        jTextFieldEmail.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 370, -1));
+
+        jTextFieldEndereco.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         getContentPane().add(jTextFieldEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 370, -1));
 
         jButtonCadastrarCliente.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N

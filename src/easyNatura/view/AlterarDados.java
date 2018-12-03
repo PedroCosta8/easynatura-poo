@@ -10,7 +10,9 @@ import easyNatura.model.Cliente;
 import easyNatura.model.DAO.ClienteDAO;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -49,12 +51,13 @@ public class AlterarDados extends javax.swing.JFrame {
         jFormattedTextFieldCEP = new javax.swing.JFormattedTextField();
         jFormattedTextEdTel = new javax.swing.JFormattedTextField();
         jTextFieldEnd = new javax.swing.JTextField();
-        jTextEditeEmail = new javax.swing.JTextField();
+        jTextFieldEmail = new javax.swing.JTextField();
         jComboBoxCliente = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jTextFieldNome = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(750, 421));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -64,8 +67,8 @@ public class AlterarDados extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);
-        jLabel2.setText("Nome:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
+        jLabel2.setText("Buscar:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel3.setForeground(java.awt.Color.white);
@@ -90,11 +93,16 @@ public class AlterarDados extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(10, 169, 0));
         jButton1.setText("Alterar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 110, 40));
 
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(169, 0, 4));
-        jButton2.setText("Cencelar");
+        jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -124,11 +132,15 @@ public class AlterarDados extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldEnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 370, -1));
 
-        jTextEditeEmail.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
-        getContentPane().add(jTextEditeEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 370, -1));
+        jTextFieldEmail.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jTextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEmailActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 370, -1));
 
         jComboBoxCliente.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
-        jComboBoxCliente.setSelectedIndex(-1);
         jComboBoxCliente.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxClienteItemStateChanged(evt);
@@ -139,7 +151,19 @@ public class AlterarDados extends javax.swing.JFrame {
                 jComboBoxClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 370, -1));
+        getContentPane().add(jComboBoxCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 370, -1));
+
+        jLabel7.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jLabel7.setForeground(java.awt.Color.white);
+        jLabel7.setText("Nome:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 98, -1, 30));
+
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 370, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/fundo.jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -165,15 +189,16 @@ public class AlterarDados extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxClienteActionPerformed
 
     private void jComboBoxClienteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxClienteItemStateChanged
-        // TODO add your handling code here:
-       System.out.println("ENTROU!");
+       // TODO add your handling code here:
        ClienteDAO clienteDAO = new ClienteDAO();
        ArrayList <Cliente> clientes = clienteDAO.retornaTodos();
        if(clientes != null){
            for (int i = 0; i < clientes.size(); i++){
                if(clientes.get(i).getNome().equals(getjComboBoxCliente().getSelectedItem().toString())){
+                   jTextFieldNome.setText(clientes.get(i).getNome());
                    jFormattedTextEdTel.setText(clientes.get(i).getTelefone());
-                   jTextEditeEmail.setText(clientes.get(i).getEmail());
+                   System.out.println("Email: " + clientes.get(i).getEmail());
+                   jTextFieldEmail.setText(clientes.get(i).getEmail());
                    jTextFieldEnd.setText(clientes.get(i).getEndereco());
                    jFormattedTextFieldCEP.setText(clientes.get(i).getCep());
                }
@@ -181,10 +206,43 @@ public class AlterarDados extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jComboBoxClienteItemStateChanged
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       controller.alterarDadosCliente();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmailActionPerformed
+
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
+
     public JComboBox<String> getjComboBoxCliente() {
         return jComboBoxCliente;
     }
     
+    public JFormattedTextField getjFormattedTextEdTel(){
+        return jFormattedTextEdTel;
+    }
+    
+    public JTextField getjTextFieldEmail(){
+        return jTextFieldEmail;
+    }
+    
+    public JTextField getjTextFieldEnd(){
+        return jTextFieldEnd;
+    }
+    
+    public JTextField getjTextFieldNome(){
+        return jTextFieldNome;
+    }
+    
+    public JFormattedTextField getjFormattedTextFieldCEP(){
+        return  jFormattedTextFieldCEP;
+    }
+    
+
     
     /**
      * @param args the command line arguments
@@ -233,8 +291,10 @@ public class AlterarDados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextEditeEmail;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEnd;
+    private javax.swing.JTextField jTextFieldNome;
     // End of variables declaration//GEN-END:variables
 
     private void iniciar() {

@@ -31,11 +31,24 @@ public class AlterarDadosClienteController {
        ArrayList <Cliente> clientes = clienteDAO.retornaTodos();
        
        if(clientes != null){
-            this.helper.preencherComboBoxProduto(clientes);
+            this.helper.preencherComboBoxCliente(clientes);
         }
-       
-       
    }
-    
-    
+   
+   public void alterarDadosCliente(){
+       ClienteDAO clienteDAO = new ClienteDAO();
+       ArrayList <Cliente> clientes = clienteDAO.retornaTodos();   
+        if(clientes != null){
+           for (int i = 0; i < clientes.size(); i++){
+               if(clientes.get(i).getNome().equals(view.getjComboBoxCliente().getSelectedItem().toString())){
+                  clientes.get(i).setNome(view.getjTextFieldNome().getText());
+                  clientes.get(i).setTelefone(view.getjFormattedTextEdTel().getText());
+                  clientes.get(i).setCep(view.getjFormattedTextFieldCEP().getText());
+                  clientes.get(i).setEndereco(view.getjTextFieldEnd().getText());
+                  clientes.get(i).setEmail(view.getjTextFieldEmail().getText());
+                  view.dispose();
+                }
+            }
+        }
+   }
 }

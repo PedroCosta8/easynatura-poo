@@ -22,7 +22,7 @@ public class AlterarDadosClienteHelper {
          this.view = view;
     }
     
-    public void preencherComboBoxProduto(ArrayList<Cliente> clientes){
+    public void preencherComboBoxCliente(ArrayList<Cliente> clientes){
         DefaultComboBoxModel comboBoxModel = (DefaultComboBoxModel) view.getjComboBoxCliente().getModel();
         if(comboBoxModel != null){
             for(Cliente cliente : clientes){

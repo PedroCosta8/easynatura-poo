@@ -27,7 +27,7 @@ public class CadastrarClienteHelper {
         String endereco = view.getjTextFieldEndereco().getText();
         String cep = view.getjTextFieldCep().getText();
         
-        Cliente clone = new Cliente(0, nome, telefone, endereco, cep);
+        Cliente clone = new Cliente(0, nome, telefone, email, endereco, cep);
         return clone;
     }
     
