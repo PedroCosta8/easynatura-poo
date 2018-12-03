@@ -6,6 +6,12 @@
 package easyNatura.view;
 
 import easyNatura.controller.MenuController;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import javax.swing.Timer;
 
 /**
  *
@@ -32,10 +38,13 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelData = new javax.swing.JLabel();
+        jLabelHora = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         cliente = new javax.swing.JMenu();
         cadastrarCliente = new javax.swing.JMenuItem();
+        alterarDados = new javax.swing.JMenuItem();
         venda = new javax.swing.JMenu();
         efetuarVenda = new javax.swing.JMenuItem();
         listarVendas = new javax.swing.JMenuItem();
@@ -46,12 +55,30 @@ public class Menu extends javax.swing.JFrame {
         cadastrarFuncionario1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(750, 421));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/imagem-base1.png"))); // NOI18N
+        jLabelData.setFont(new java.awt.Font("Tlwg Typist", 1, 18)); // NOI18N
+        jLabelData.setForeground(java.awt.Color.white);
+        getContentPane().add(jLabelData, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 120, 20));
+
+        jLabelHora.setFont(new java.awt.Font("Tlwg Typist", 1, 18)); // NOI18N
+        jLabelHora.setForeground(java.awt.Color.white);
+        getContentPane().add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, 100, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/fundo.jpeg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         cliente.setText("Cliente");
 
-        cadastrarCliente.setText("Cadastrar Cliente");
+        cadastrarCliente.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        cadastrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/user.png"))); // NOI18N
+        cadastrarCliente.setText("Cadastrar");
         cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastrarClienteActionPerformed(evt);
@@ -59,10 +86,22 @@ public class Menu extends javax.swing.JFrame {
         });
         cliente.add(cadastrarCliente);
 
+        alterarDados.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        alterarDados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/copywriter.png"))); // NOI18N
+        alterarDados.setText("Alterar Dados");
+        alterarDados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alterarDadosActionPerformed(evt);
+            }
+        });
+        cliente.add(alterarDados);
+
         jMenuBar1.add(cliente);
 
         venda.setText("Venda");
 
+        efetuarVenda.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        efetuarVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/venda-ico.png"))); // NOI18N
         efetuarVenda.setText("Efetuar Venda");
         efetuarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +110,8 @@ public class Menu extends javax.swing.JFrame {
         });
         venda.add(efetuarVenda);
 
+        listarVendas.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        listarVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/listar-ico.png"))); // NOI18N
         listarVendas.setText("Listar Vendas");
         listarVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +124,8 @@ public class Menu extends javax.swing.JFrame {
 
         estoque.setText("Estoque");
 
+        cadastrarProduto.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        cadastrarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/cadastrar-produtos-ico.png"))); // NOI18N
         cadastrarProduto.setText("Cadastrar Produto");
         cadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +134,8 @@ public class Menu extends javax.swing.JFrame {
         });
         estoque.add(cadastrarProduto);
 
+        listarProdutos.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        listarProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/listar-produtos-ico.png"))); // NOI18N
         listarProdutos.setText("Listar Produtos");
         listarProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,6 +148,8 @@ public class Menu extends javax.swing.JFrame {
 
         Funcionario.setText("Funcionário");
 
+        cadastrarFuncionario1.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        cadastrarFuncionario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/add-funcionario-ico.png"))); // NOI18N
         cadastrarFuncionario1.setText("Cadastrar Funcionário");
         cadastrarFuncionario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,20 +162,10 @@ public class Menu extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
     private void cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteActionPerformed
         controller.iniciaCadCliente();
         // TODO add your handling code here:
@@ -158,6 +195,34 @@ public class Menu extends javax.swing.JFrame {
         controller.inciaCadFunc();
         // TODO add your handling code here:
     }//GEN-LAST:event_cadastrarFuncionario1ActionPerformed
+
+    private void alterarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarDadosActionPerformed
+        controller.iniciaAltDados();
+    }//GEN-LAST:event_alterarDadosActionPerformed
+
+    
+    class hora implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Calendar agora = Calendar.getInstance();
+            jLabelHora.setText(String.format("%1$tH:%1$tM:%1$tS",agora));
+        }
+    }
+    
+    
+    
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+       // TODO add your handling code here:
+        
+        // DATA
+        Date dataSistema = new Date();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        jLabelData.setText(formato.format(dataSistema));
+        
+        // HORA
+        Timer timer = new Timer(1000, new hora());
+        timer.start();
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -196,6 +261,7 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Funcionario;
+    private javax.swing.JMenuItem alterarDados;
     private javax.swing.JMenuItem cadastrarCliente;
     private javax.swing.JMenuItem cadastrarFuncionario1;
     private javax.swing.JMenuItem cadastrarProduto;
@@ -203,6 +269,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem efetuarVenda;
     private javax.swing.JMenu estoque;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelData;
+    private javax.swing.JLabel jLabelHora;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem listarProdutos;
     private javax.swing.JMenuItem listarVendas;

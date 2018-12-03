@@ -42,47 +42,79 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jEntrar = new javax.swing.JButton();
-        jBackground1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("easyNatura - Login");
+        setPreferredSize(new java.awt.Dimension(750, 421));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextLogin.setBackground(new java.awt.Color(204, 204, 204));
+        jTextLogin.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jTextLogin.setToolTipText("");
+        jTextLogin.setBorder(null);
         jTextLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 470, 50));
+        getContentPane().add(jTextLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 210, 30));
 
+        jPasswordField1.setBackground(new java.awt.Color(204, 204, 204));
+        jPasswordField1.setBorder(null);
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 470, 50));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 210, 30));
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);
-        jLabel2.setText("Login");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
+        jLabel2.setText("Login:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, -1, 70));
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel3.setForeground(java.awt.Color.white);
-        jLabel3.setText("Senha");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, -1, -1));
+        jLabel3.setText("Senha:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, 90));
 
-        jEntrar.setBackground(new java.awt.Color(138, 138, 165));
-        jEntrar.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
+        jEntrar.setBackground(new java.awt.Color(204, 204, 204));
+        jEntrar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jEntrar.setForeground(new java.awt.Color(1, 140, 54));
         jEntrar.setText("Entrar");
+        jEntrar.setAlignmentX(2.1F);
+        jEntrar.setAlignmentY(0.8F);
+        jEntrar.setAutoscrolls(true);
+        jEntrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
+        jEntrar.setBorderPainted(false);
+        jEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jEntrar.setFocusPainted(false);
         jEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 410, -1));
+        getContentPane().add(jEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 110, -1));
 
-        jBackground1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/imagem-base1.png"))); // NOI18N
-        getContentPane().add(jBackground1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 3, 12)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.white);
+        jLabel1.setText("Informar senha com 8 caracteres.");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Bem-vindo(a) ao EasyNatura");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/natura.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 200, 160));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/fundo.jpeg"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -136,10 +168,13 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jBackground1;
     private javax.swing.JButton jEntrar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextLogin;
     // End of variables declaration//GEN-END:variables

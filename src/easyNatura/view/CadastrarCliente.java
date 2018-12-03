@@ -6,6 +6,7 @@
 package easyNatura.view;
 
 import easyNatura.controller.CadastrarClienteController;
+import javax.swing.JFormattedTextField;
 import javax.swing.JTextField;
 
 /**
@@ -34,62 +35,103 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextFieldNome = new javax.swing.JTextField();
-        jTextFieldTelefone = new javax.swing.JTextField();
         jTextFieldEmail = new javax.swing.JTextField();
         jTextFieldEndereco = new javax.swing.JTextField();
-        jTextFieldCep = new javax.swing.JTextField();
         jButtonCadastrarCliente = new javax.swing.JButton();
+        jButtonCancelarCliente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jTextFieldTelefone = new javax.swing.JFormattedTextField();
+        jTextFieldCep = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastrar Cliente - EasyNatura");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextFieldNome.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 560, -1));
-        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 560, -1));
-        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 560, -1));
-        getContentPane().add(jTextFieldEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 560, -1));
-        getContentPane().add(jTextFieldCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 560, -1));
+        getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 370, -1));
+        getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 370, -1));
+        getContentPane().add(jTextFieldEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 370, -1));
 
-        jButtonCadastrarCliente.setText("CADASTRAR");
+        jButtonCadastrarCliente.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        jButtonCadastrarCliente.setForeground(new java.awt.Color(10, 169, 0));
+        jButtonCadastrarCliente.setText("Cadastrar");
         jButtonCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCadastrarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCadastrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 460, 40));
+        getContentPane().add(jButtonCadastrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 110, 40));
 
+        jButtonCancelarCliente.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        jButtonCancelarCliente.setForeground(new java.awt.Color(169, 0, 4));
+        jButtonCancelarCliente.setText("Cancelar");
+        jButtonCancelarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarClienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 110, 40));
+
+        jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);
-        jLabel2.setText("Nome");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
+        jLabel2.setText("Nome:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel3.setForeground(java.awt.Color.white);
-        jLabel3.setText("Telefone");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
+        jLabel3.setText("Telefone:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, 50));
 
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel4.setForeground(java.awt.Color.white);
-        jLabel4.setText("Email");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
+        jLabel4.setText("Email:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, 50));
 
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel5.setForeground(java.awt.Color.white);
-        jLabel5.setText("Endereço");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+        jLabel5.setText("Endereço:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, 50));
 
+        try {
+            jTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTextFieldTelefone.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jTextFieldTelefone.setName(""); // NOI18N
+        jTextFieldTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTelefoneActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 130, -1));
+
+        try {
+            jTextFieldCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(jTextFieldCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 100, -1));
+
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel6.setForeground(java.awt.Color.white);
-        jLabel6.setText("CEP");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+        jLabel6.setText("CEP:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, 70));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/imagem-base1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/fundo.jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -103,6 +145,21 @@ public class CadastrarCliente extends javax.swing.JFrame {
         //tem que ter mensagem de confirmação
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCadastrarClienteActionPerformed
+
+    private void jButtonCancelarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarClienteActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Menu().setVisible(true);
+            }
+        });
+        
+    }//GEN-LAST:event_jButtonCancelarClienteActionPerformed
+
+    private void jTextFieldTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldTelefoneActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,17 +198,19 @@ public class CadastrarCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastrarCliente;
+    private javax.swing.JButton jButtonCancelarCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextFieldCep;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JFormattedTextField jTextFieldCep;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEndereco;
     private javax.swing.JTextField jTextFieldNome;
-    private javax.swing.JTextField jTextFieldTelefone;
+    private javax.swing.JFormattedTextField jTextFieldTelefone;
     // End of variables declaration//GEN-END:variables
 
     public JTextField getjTextFieldCep() {
@@ -159,7 +218,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
     }
 
     public void setjTextFieldCep(JTextField jTextFieldCep) {
-        this.jTextFieldCep = jTextFieldCep;
+        this.jTextFieldCep = (JFormattedTextField) jTextFieldCep;
     }
 
     public JTextField getjTextFieldEmail() {
@@ -191,7 +250,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
     }
 
     public void setjTextFieldTelefone(JTextField jTextFieldTelefone) {
-        this.jTextFieldTelefone = jTextFieldTelefone;
+        this.jTextFieldTelefone = (JFormattedTextField) jTextFieldTelefone;
     }
     
     

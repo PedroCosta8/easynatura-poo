@@ -5,6 +5,7 @@
  */
 package easyNatura.controller;
 
+import easyNatura.view.AlterarDados;
 import easyNatura.view.CadastrarCliente;
 import easyNatura.view.CadastrarFuncionario;
 import easyNatura.view.CadastrarProduto;
@@ -33,6 +34,11 @@ public class MenuController {
     public void iniciaCadCliente(){
         CadastrarCliente cadCli = new CadastrarCliente();
         cadCli.setVisible(true);
+    }
+    
+    public void iniciaAltDados(){
+        AlterarDados altDa = new AlterarDados();
+        altDa.setVisible(true);
     }
     
     public void iniciaEfetuarVenda(){
