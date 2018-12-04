@@ -51,6 +51,7 @@ public class Menu extends javax.swing.JFrame {
         estoque = new javax.swing.JMenu();
         cadastrarProduto = new javax.swing.JMenuItem();
         listarProdutos = new javax.swing.JMenuItem();
+        AlterarDadosProduto = new javax.swing.JMenuItem();
         Funcionario = new javax.swing.JMenu();
         cadastrarFuncionario1 = new javax.swing.JMenuItem();
 
@@ -87,7 +88,7 @@ public class Menu extends javax.swing.JFrame {
 
         alterarDados.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         alterarDados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/copywriter.png"))); // NOI18N
-        alterarDados.setText("Alterar Dados");
+        alterarDados.setText("Alterar Dados do Cliente");
         alterarDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alterarDadosActionPerformed(evt);
@@ -143,6 +144,14 @@ public class Menu extends javax.swing.JFrame {
         });
         estoque.add(listarProdutos);
 
+        AlterarDadosProduto.setText("Alterar Dados do Produto");
+        AlterarDadosProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlterarDadosProdutoActionPerformed(evt);
+            }
+        });
+        estoque.add(AlterarDadosProduto);
+
         jMenuBar1.add(estoque);
 
         Funcionario.setText("Funcionário");
@@ -197,7 +206,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrarFuncionario1ActionPerformed
 
     private void alterarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarDadosActionPerformed
-        controller.iniciaAltDados();
+        controller.iniciaAltDadosCliente();
     }//GEN-LAST:event_alterarDadosActionPerformed
 
     
@@ -223,6 +232,11 @@ public class Menu extends javax.swing.JFrame {
         Timer timer = new Timer(1000, new hora());
         timer.start();
     }//GEN-LAST:event_formWindowOpened
+
+    private void AlterarDadosProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarDadosProdutoActionPerformed
+        controller.iniciaAltDadosProd();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AlterarDadosProdutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,6 +274,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AlterarDadosProduto;
     private javax.swing.JMenu Funcionario;
     private javax.swing.JMenuItem alterarDados;
     private javax.swing.JMenuItem cadastrarCliente;

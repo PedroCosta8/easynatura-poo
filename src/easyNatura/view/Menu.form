@@ -31,7 +31,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/easyNatura/view/imagens/copywriter.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Alterar Dados"/>
+                <Property name="text" type="java.lang.String" value="Alterar Dados do Cliente"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alterarDadosActionPerformed"/>
@@ -105,6 +105,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listarProdutosActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="AlterarDadosProduto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Alterar Dados do Produto"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AlterarDadosProdutoActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

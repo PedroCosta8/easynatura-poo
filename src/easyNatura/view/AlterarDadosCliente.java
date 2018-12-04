@@ -18,7 +18,7 @@ import javax.swing.JTextField;
  *
  * @author igu
  */
-public class AlterarDados extends javax.swing.JFrame {
+public class AlterarDadosCliente extends javax.swing.JFrame {
 
     /**
      * Creates new form AlterarDados
@@ -26,7 +26,7 @@ public class AlterarDados extends javax.swing.JFrame {
     
     private final AlterarDadosClienteController controller;
     
-    public AlterarDados() {
+    public AlterarDadosCliente() {
         initComponents();
         controller = new AlterarDadosClienteController(this);
         iniciar();
@@ -193,12 +193,13 @@ public class AlterarDados extends javax.swing.JFrame {
        // TODO add your handling code here:
        ClienteDAO clienteDAO = new ClienteDAO();
        ArrayList <Cliente> clientes = clienteDAO.retornaTodos();
+       Cliente clienteJcBox = (Cliente) this.getjComboBoxCliente().getModel().getSelectedItem();
        if(clientes != null){
            for (int i = 0; i < clientes.size(); i++){
-               if(clientes.get(i).getNome().equals(getjComboBoxCliente().getSelectedItem().toString())){
+               if(clientes.get(i).getId() == clienteJcBox.getId()){
                    jTextFieldNome.setText(clientes.get(i).getNome());
                    jFormattedTextEdTel.setText(clientes.get(i).getTelefone());
-                   System.out.println("Email: " + clientes.get(i).getEmail());
+                   //System.out.println("Email: " + clientes.get(i).getEmail());
                    jTextFieldEmail.setText(clientes.get(i).getEmail());
                    jTextFieldEnd.setText(clientes.get(i).getEndereco());
                    jFormattedTextFieldCEP.setText(clientes.get(i).getCep());
@@ -262,20 +263,21 @@ public class AlterarDados extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AlterarDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarDadosCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AlterarDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarDadosCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AlterarDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarDadosCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AlterarDados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarDadosCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AlterarDados().setVisible(true);
+                new AlterarDadosCliente().setVisible(true);
             }
         });
     }

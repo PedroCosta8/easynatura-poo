@@ -6,7 +6,7 @@
 package easyNatura.controller.helpers;
 
 import easyNatura.model.Cliente;
-import easyNatura.view.AlterarDados;
+import easyNatura.view.AlterarDadosCliente;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 
@@ -16,9 +16,9 @@ import javax.swing.DefaultComboBoxModel;
  */
 public class AlterarDadosClienteHelper {
     
-    private final AlterarDados view;
+    private final AlterarDadosCliente view;
     
-    public AlterarDadosClienteHelper(AlterarDados view){
+    public AlterarDadosClienteHelper(AlterarDadosCliente view){
          this.view = view;
     }
     

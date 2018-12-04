@@ -6,10 +6,11 @@
 package easyNatura.controller;
 
 import easyNatura.controller.helpers.AlterarDadosClienteHelper;
-import easyNatura.view.AlterarDados;
+import easyNatura.view.AlterarDadosCliente;
 import easyNatura.model.Cliente;
 import easyNatura.model.DAO.ClienteDAO;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,10 +19,10 @@ import java.util.ArrayList;
 
 public class AlterarDadosClienteController {
     
-    private final AlterarDados view;
+    private final AlterarDadosCliente view;
     private final AlterarDadosClienteHelper helper;
     
-    public AlterarDadosClienteController(AlterarDados view){
+    public AlterarDadosClienteController(AlterarDadosCliente view){
         this.view = view;
         helper = new AlterarDadosClienteHelper(view);
     }
@@ -37,16 +38,25 @@ public class AlterarDadosClienteController {
    
    public void alterarDadosCliente(){
        ClienteDAO clienteDAO = new ClienteDAO();
-       ArrayList <Cliente> clientes = clienteDAO.retornaTodos();   
+       ArrayList <Cliente> clientes = clienteDAO.retornaTodos();
+       //abaixo é feito uma conversão de item do combobox para um objeto cliente
+       Cliente clienteJcBox = (Cliente) view.getjComboBoxCliente().getModel().getSelectedItem();
         if(clientes != null){
            for (int i = 0; i < clientes.size(); i++){
-               if(clientes.get(i).getNome().equals(view.getjComboBoxCliente().getSelectedItem().toString())){
+               //nova condição de verificação, utilizando o id
+               if(clientes.get(i).getId() == clienteJcBox.getId()){
                   clientes.get(i).setNome(view.getjTextFieldNome().getText());
                   clientes.get(i).setTelefone(view.getjFormattedTextEdTel().getText());
                   clientes.get(i).setCep(view.getjFormattedTextFieldCEP().getText());
                   clientes.get(i).setEndereco(view.getjTextFieldEnd().getText());
                   clientes.get(i).setEmail(view.getjTextFieldEmail().getText());
-                  view.dispose();
+                  boolean ver = clienteDAO.atualizar(clientes.get(i)); //metodo de persistencia de dados;
+                  if(ver){
+                      view.dispose();
+                  }
+                  else{
+                      JOptionPane.showMessageDialog(null, "Não foi possível alterar os dados");
+                  }
                 }
             }
         }
