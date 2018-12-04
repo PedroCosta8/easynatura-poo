@@ -34,6 +34,7 @@ public class ClienteDAO {
                 ArrayList<Cliente> c = new ArrayList<>();
                 c.add(cliente);
                 json = gson.toJson(c, Banco.typeCliente);
+                Banco.clientes = c;
             }
             File arquivo = new File("clientes.json");
         try {

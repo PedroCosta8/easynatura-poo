@@ -34,6 +34,7 @@ public class UsuarioDAO {
                 ArrayList<Usuario> u = new ArrayList<>();
                 u.add(usuario);
                 json = gson.toJson(u, Banco.typeUsuario);
+                Banco.usuarios = u;
             }
             File arquivo = new File("usuarios.json");
         try {

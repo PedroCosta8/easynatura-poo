@@ -6,6 +6,7 @@
 package easyNatura.model.DAO;
 
 import com.google.gson.Gson;
+import easyNatura.model.Produto;
 import easyNatura.model.Venda;
 import java.io.File;
 import java.io.FileWriter;
@@ -23,6 +24,18 @@ public class VendaDAO {
     public void inserir(Venda venda){
           
         if(venda.getId() == 0){
+            Produto p = venda.getProduto();
+            int qtdVenda = venda.getQuantidade();
+            int qtdProduto = p.getQuantidade();
+            if(qtdVenda <= qtdProduto){
+                p.setQuantidade(qtdProduto - qtdVenda);
+                ProdutoDAO produtoDAO = new ProdutoDAO();
+                produtoDAO.atualizar(p);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Quantidade inválida\nVenda não efetuada");
+                return;
+            }
             Gson gson = new Gson();
             String json;
             venda.setId(proximoId());
@@ -34,6 +47,7 @@ public class VendaDAO {
                 ArrayList<Venda> v = new ArrayList<>();
                 v.add(venda);
                 json = gson.toJson(v, Banco.typeVenda);
+                Banco.vendas = v;
             }
             File arquivo = new File("vendas.json");
         try {

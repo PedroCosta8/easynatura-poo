@@ -28,7 +28,7 @@ public class ListarProdutosController {
     public void atualizaTabela(){
         ProdutoDAO produtoDAO = new ProdutoDAO();
         ArrayList<Produto> produtos = produtoDAO.retornaTodos();
-        this.helper.preecherTabela(produtos);
+        this.helper.preencherTabela(produtos);
     }
     
 }

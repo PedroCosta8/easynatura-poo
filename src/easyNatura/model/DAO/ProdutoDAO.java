@@ -26,6 +26,8 @@ public class ProdutoDAO {
             Gson gson = new Gson();
             String json;
             produto.setId(proximoId());
+//            Banco.produtos.add(produto);
+//            json = gson.toJson(Banco.produtos, Banco.typeProduto);
             if(Banco.produtos != null){
                 Banco.produtos.add(produto);
                 json = gson.toJson(Banco.produtos, Banco.typeProduto);
@@ -34,6 +36,7 @@ public class ProdutoDAO {
                 ArrayList<Produto> p = new ArrayList<>();
                 p.add(produto);
                 json = gson.toJson(p, Banco.typeProduto);
+                Banco.produtos = p;
             }
             File arquivo = new File("produtos.json");
         try {

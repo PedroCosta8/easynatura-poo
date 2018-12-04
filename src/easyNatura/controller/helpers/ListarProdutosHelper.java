@@ -22,7 +22,7 @@ public class ListarProdutosHelper {
         this.view = view;
     }
     
-    public void preecherTabela(ArrayList<Produto> produtos) {
+    public void preencherTabela(ArrayList<Produto> produtos) {
         DefaultTableModel tableModel = (DefaultTableModel) view.getjTable1().getModel();
         tableModel.setRowCount(0);
         
