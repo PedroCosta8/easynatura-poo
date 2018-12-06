@@ -203,6 +203,7 @@ public class AlterarDadosCliente extends javax.swing.JFrame {
                    jTextFieldEmail.setText(clientes.get(i).getEmail());
                    jTextFieldEnd.setText(clientes.get(i).getEndereco());
                    jFormattedTextFieldCEP.setText(clientes.get(i).getCep());
+                   break;
                }
            }
         }

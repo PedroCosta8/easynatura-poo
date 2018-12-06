@@ -5,14 +5,17 @@
  */
 package easyNatura;
 
-import easyNatura.model.DAO.Banco;
-import easyNatura.model.DAO.UsuarioDAO;
-import easyNatura.model.Usuario;
+import easyNatura.view.Login;
+
 /**
  *
  * @author pedro
  */
 public class EasyNatura {
     
-    
+    public static void main(String[] args) {
+        
+        Login loginView = new Login();
+        loginView.setVisible(true);
+    }
 }

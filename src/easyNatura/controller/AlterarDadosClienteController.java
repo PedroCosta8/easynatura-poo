@@ -57,6 +57,7 @@ public class AlterarDadosClienteController {
                   else{
                       JOptionPane.showMessageDialog(null, "Não foi possível alterar os dados");
                   }
+                  break;
                 }
             }
         }

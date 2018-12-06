@@ -14,6 +14,9 @@ import easyNatura.view.EfetuarVenda;
 import easyNatura.view.ListarProdutos;
 import easyNatura.view.ListarVendas;
 import easyNatura.view.Menu;
+import easyNatura.view.RemoverCliente;
+import easyNatura.view.RemoverFuncionario;
+import easyNatura.view.RemoverProduto;
 
 /**
  *
@@ -32,6 +35,11 @@ public class MenuController {
         cadFunc.setVisible(true);
     }
     
+    public void iniciaRemoveFunc(){
+        RemoverFuncionario rmvFunc = new RemoverFuncionario();
+        rmvFunc.setVisible(true);
+    }
+    
     public void iniciaCadCliente(){
         CadastrarCliente cadCli = new CadastrarCliente();
         cadCli.setVisible(true);
@@ -40,6 +48,11 @@ public class MenuController {
     public void iniciaAltDadosCliente(){
         AlterarDadosCliente altDa = new AlterarDadosCliente();
         altDa.setVisible(true);
+    }
+    
+    public void iniciaRemoveCliente(){
+        RemoverCliente rmvCliente = new RemoverCliente();
+        rmvCliente.setVisible(true);
     }
     
     public void iniciaEfetuarVenda(){
@@ -65,5 +78,10 @@ public class MenuController {
     public void iniciaAltDadosProd(){
         AlterarDadosProduto altDp = new AlterarDadosProduto();
         altDp.setVisible(true);
+    }
+    
+    public void iniciaRemoveProduto(){
+        RemoverProduto rmvProduto = new RemoverProduto();
+        rmvProduto.setVisible(true);
     }
 }

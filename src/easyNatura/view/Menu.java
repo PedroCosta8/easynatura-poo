@@ -45,6 +45,7 @@ public class Menu extends javax.swing.JFrame {
         cliente = new javax.swing.JMenu();
         cadastrarCliente = new javax.swing.JMenuItem();
         alterarDados = new javax.swing.JMenuItem();
+        removerCliente = new javax.swing.JMenuItem();
         venda = new javax.swing.JMenu();
         efetuarVenda = new javax.swing.JMenuItem();
         listarVendas = new javax.swing.JMenuItem();
@@ -52,8 +53,10 @@ public class Menu extends javax.swing.JFrame {
         cadastrarProduto = new javax.swing.JMenuItem();
         listarProdutos = new javax.swing.JMenuItem();
         AlterarDadosProduto = new javax.swing.JMenuItem();
+        removerProduto = new javax.swing.JMenuItem();
         Funcionario = new javax.swing.JMenu();
         cadastrarFuncionario1 = new javax.swing.JMenuItem();
+        removerFuncionario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -95,6 +98,14 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         cliente.add(alterarDados);
+
+        removerCliente.setText("Remover Cliente");
+        removerCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removerClienteActionPerformed(evt);
+            }
+        });
+        cliente.add(removerCliente);
 
         jMenuBar1.add(cliente);
 
@@ -152,6 +163,14 @@ public class Menu extends javax.swing.JFrame {
         });
         estoque.add(AlterarDadosProduto);
 
+        removerProduto.setText("Remover Produto");
+        removerProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removerProdutoActionPerformed(evt);
+            }
+        });
+        estoque.add(removerProduto);
+
         jMenuBar1.add(estoque);
 
         Funcionario.setText("Funcionário");
@@ -165,6 +184,14 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         Funcionario.add(cadastrarFuncionario1);
+
+        removerFuncionario.setText("Remover Funcionário");
+        removerFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removerFuncionarioActionPerformed(evt);
+            }
+        });
+        Funcionario.add(removerFuncionario);
 
         jMenuBar1.add(Funcionario);
 
@@ -238,6 +265,21 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AlterarDadosProdutoActionPerformed
 
+    private void removerClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerClienteActionPerformed
+        controller.iniciaRemoveCliente();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removerClienteActionPerformed
+
+    private void removerProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerProdutoActionPerformed
+        controller.iniciaRemoveProduto();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removerProdutoActionPerformed
+
+    private void removerFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerFuncionarioActionPerformed
+        controller.iniciaRemoveFunc();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removerFuncionarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -289,6 +331,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem listarProdutos;
     private javax.swing.JMenuItem listarVendas;
+    private javax.swing.JMenuItem removerCliente;
+    private javax.swing.JMenuItem removerFuncionario;
+    private javax.swing.JMenuItem removerProduto;
     private javax.swing.JMenu venda;
     // End of variables declaration//GEN-END:variables
 }

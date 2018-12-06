@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/pedro/easynatura-poo/src/easyNatura/view/AlterarDadosCliente.java</file>
-            <file>file:/home/pedro/easynatura-poo/src/easyNatura/view/AlterarDadosProduto.java</file>
+            <file>file:/home/pedro/easynatura-poo/src/easyNatura/view/RemoverProduto.java</file>
+            <file>file:/home/pedro/easynatura-poo/src/easyNatura/model/Usuario.java</file>
+            <file>file:/home/pedro/easynatura-poo/src/easyNatura/view/RemoverFuncionario.java</file>
+            <file>file:/home/pedro/easynatura-poo/src/easyNatura/view/RemoverCliente.java</file>
+            <file>file:/home/pedro/easynatura-poo/src/easyNatura/EasyNatura.java</file>
         </group>
     </open-files>
 </project-private>
