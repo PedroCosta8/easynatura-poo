@@ -99,6 +99,7 @@ public class Menu extends javax.swing.JFrame {
         });
         cliente.add(alterarDados);
 
+        removerCliente.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         removerCliente.setText("Remover Cliente");
         removerCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,6 +156,7 @@ public class Menu extends javax.swing.JFrame {
         });
         estoque.add(listarProdutos);
 
+        AlterarDadosProduto.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         AlterarDadosProduto.setText("Alterar Dados do Produto");
         AlterarDadosProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +165,7 @@ public class Menu extends javax.swing.JFrame {
         });
         estoque.add(AlterarDadosProduto);
 
+        removerProduto.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         removerProduto.setText("Remover Produto");
         removerProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,6 +188,7 @@ public class Menu extends javax.swing.JFrame {
         });
         Funcionario.add(cadastrarFuncionario1);
 
+        removerFuncionario.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         removerFuncionario.setText("Remover Funcionário");
         removerFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

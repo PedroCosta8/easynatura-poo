@@ -33,7 +33,9 @@ public class ListarVendasHelper {
                    venda.getCliente(),
                    venda.getProduto(),
                    venda.getDataFormatada(),
-                   venda.getQuantidade()
+                   venda.getQuantidade(),
+                   venda.getProduto().getValor(),
+                   venda.valorTotal()
                });
            }
        }

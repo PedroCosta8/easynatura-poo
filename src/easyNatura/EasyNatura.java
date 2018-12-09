@@ -7,7 +7,6 @@ package easyNatura;
 
 import easyNatura.model.DAO.Banco;
 import easyNatura.view.Login;
-import java.io.FileNotFoundException;
 
 /**
  *

@@ -6,6 +6,7 @@
 package easyNatura.view;
 
 import easyNatura.controller.EfetuarVendaController;
+import easyNatura.model.Produto;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
@@ -57,7 +58,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jComboParcelas = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldValorTotal = new javax.swing.JTextField();
         jLabelHora = new javax.swing.JLabel();
         jLabelData = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -82,6 +83,11 @@ public class EfetuarVenda extends javax.swing.JFrame {
 
         jComboBoxProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
         jComboBoxProduto.setSelectedIndex(-1);
+        jComboBoxProduto.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxProdutoItemStateChanged(evt);
+            }
+        });
         getContentPane().add(jComboBoxProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 270, 30));
 
         jTextFieldQuantidade.setFont(new java.awt.Font("Liberation Mono", 0, 15)); // NOI18N
@@ -166,8 +172,8 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jLabel8.setText("Valor total:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Lucida Sans", 0, 15)); // NOI18N
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 100, 30));
+        jTextFieldValorTotal.setFont(new java.awt.Font("Lucida Sans", 0, 15)); // NOI18N
+        getContentPane().add(jTextFieldValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 100, 30));
 
         jLabelHora.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         jLabelHora.setForeground(java.awt.Color.white);
@@ -235,6 +241,12 @@ public class EfetuarVenda extends javax.swing.JFrame {
     
     }//GEN-LAST:event_jFormattedTextDataActionPerformed
 
+    private void jComboBoxProdutoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxProdutoItemStateChanged
+        Produto produtoJcBox = (Produto) this.getjComboBoxProduto().getModel().getSelectedItem();
+        controller.valorUniETotal(produtoJcBox);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxProdutoItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -287,8 +299,8 @@ public class EfetuarVenda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelData;
     private javax.swing.JLabel jLabelHora;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldQuantidade;
+    private javax.swing.JTextField jTextFieldValorTotal;
     private javax.swing.JTextField jTextValorUnitario;
     // End of variables declaration//GEN-END:variables
 
@@ -329,5 +341,23 @@ public class EfetuarVenda extends javax.swing.JFrame {
     public void setjTextFieldQuantidade(JTextField jTextFieldQuantidade) {
         this.jTextFieldQuantidade = jTextFieldQuantidade;
     }
+
+    public JTextField getjTextField1() {
+        return jTextFieldValorTotal;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextFieldValorTotal = jTextField1;
+    }
+
+    public JTextField getjTextValorUnitario() {
+        return jTextValorUnitario;
+    }
+
+    public void setjTextValorUnitario(JTextField jTextValorUnitario) {
+        this.jTextValorUnitario = jTextValorUnitario;
+    }
+    
+    
     
 }

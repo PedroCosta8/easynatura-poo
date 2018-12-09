@@ -8,13 +8,13 @@ package easyNatura.controller;
 import easyNatura.view.EfetuarVenda;
 import easyNatura.controller.helpers.EfetuarVendaHelper;
 import easyNatura.model.Cliente;
-import easyNatura.model.DAO.Banco;
 import easyNatura.model.DAO.ClienteDAO;
 import easyNatura.model.DAO.ProdutoDAO;
 import easyNatura.model.DAO.VendaDAO;
 import easyNatura.model.Produto;
 import easyNatura.model.Venda;
 import java.util.ArrayList;
+import javax.swing.JTextField;
 /**
  *
  * @author pedro
@@ -55,17 +55,18 @@ public class EfetuarVendaController {
         Venda venda = helper.getVenda();
         VendaDAO vendaDAO = new VendaDAO();
         vendaDAO.inserir(venda);
-//        ArrayList<Venda> listaVendas = Banco.vendas;
-//
-//              for(int i = 0; i < listaVendas.size(); i++){
-//                  
-//                System.out.println(listaVendas.get(i).getId());
-//                System.out.println(listaVendas.get(i).getCliente());
-//                System.out.println(listaVendas.get(i).getProduto());
-//                System.out.println(listaVendas.get(i).getDataFormatada()
-//                );
-//              }
-//        System.out.println(listaVendas.size());
         view.dispose();
+    }
+    
+    public void valorUniETotal(Produto produtojcBox){
+        ProdutoDAO produtoDAO = new ProdutoDAO();
+        ArrayList<Produto> produtos = produtoDAO.retornaTodos();
+        if(produtos != null){
+            for(int i = 0; i < produtos.size(); i++){
+                if(produtos.get(i).getId() == produtojcBox.getId()){
+                    view.getjTextValorUnitario().setText("R$: "+ produtos.get(i).getValor());    
+                }
+            }
+        }
     }
 }
