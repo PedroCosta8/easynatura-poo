@@ -65,27 +65,27 @@ public class AlterarDadosCliente extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setText("Buscar:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 58, -1, 30));
 
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel3.setForeground(java.awt.Color.white);
         jLabel3.setText("CEP:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, 60));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, 70));
 
-        jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel4.setForeground(java.awt.Color.white);
         jLabel4.setText("Telefone:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, 40));
 
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel5.setForeground(java.awt.Color.white);
         jLabel5.setText("Email:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, 30));
 
-        jLabel6.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel6.setForeground(java.awt.Color.white);
         jLabel6.setText("Endereço:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
@@ -153,7 +153,7 @@ public class AlterarDadosCliente extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBoxCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 370, -1));
 
-        jLabel7.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel7.setForeground(java.awt.Color.white);
         jLabel7.setText("Nome:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 98, -1, 30));

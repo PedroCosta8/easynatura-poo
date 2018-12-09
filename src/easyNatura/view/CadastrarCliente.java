@@ -126,6 +126,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jTextFieldCep.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         getContentPane().add(jTextFieldCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 100, -1));
 
         jLabel6.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N

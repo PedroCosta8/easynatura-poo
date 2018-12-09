@@ -11,6 +11,7 @@ import easyNatura.model.DAO.UsuarioDAO;
 import easyNatura.model.Usuario;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
+import javax.swing.JRootPane;
 import javax.swing.JTextField;
 
 /**
@@ -50,7 +51,14 @@ public class Login extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("easyNatura - Login");
+        setTitle("EasyNatura - Login");
+        setMinimumSize(new java.awt.Dimension(750, 421));
+        setPreferredSize(new java.awt.Dimension(750, 421));
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextLogin.setBackground(new java.awt.Color(204, 204, 204));
@@ -115,7 +123,12 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 200, 160));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/fundo.jpeg"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jLabel6KeyTyped(evt);
+            }
+        });
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -133,6 +146,14 @@ public class Login extends javax.swing.JFrame {
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jLabel6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel6KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel6KeyTyped
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+
+    }//GEN-LAST:event_formKeyPressed
 
     /**
      * @param args the command line arguments
@@ -181,6 +202,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField jTextLogin;
     // End of variables declaration//GEN-END:variables
 
+    
     public void mostraMensagem(String mensagem) {
         JOptionPane.showMessageDialog(null, mensagem);
     }

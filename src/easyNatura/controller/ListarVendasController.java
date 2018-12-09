@@ -15,6 +15,7 @@ import java.util.ArrayList;
  *
  * @author pedro
  */
+
 public class ListarVendasController {
     
     private final ListarVendas view;

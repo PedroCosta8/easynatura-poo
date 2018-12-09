@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package easyNatura.controller;
 
 import easyNatura.view.AlterarDadosCliente;
@@ -11,6 +12,7 @@ import easyNatura.view.CadastrarCliente;
 import easyNatura.view.CadastrarFuncionario;
 import easyNatura.view.CadastrarProduto;
 import easyNatura.view.EfetuarVenda;
+import easyNatura.view.ListarClientes;
 import easyNatura.view.ListarProdutos;
 import easyNatura.view.ListarVendas;
 import easyNatura.view.Menu;
@@ -22,6 +24,7 @@ import easyNatura.view.RemoverProduto;
  *
  * @author pedro
  */
+
 public class MenuController {
     
     private final Menu view;
@@ -83,5 +86,10 @@ public class MenuController {
     public void iniciaRemoveProduto(){
         RemoverProduto rmvProduto = new RemoverProduto();
         rmvProduto.setVisible(true);
+    }
+
+    public void iniciaListarClientes() {
+        ListarClientes listarC = new ListarClientes();
+        listarC.setVisible(true);
     }
 }

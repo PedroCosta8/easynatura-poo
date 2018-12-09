@@ -96,7 +96,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
                 jTextFieldQuantidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 100, -1));
+        getContentPane().add(jTextFieldQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 90, -1));
 
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(10, 169, 0));
@@ -106,22 +106,22 @@ public class EfetuarVenda extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 130, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 150, 50));
 
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(169, 0, 4));
         jButton2.setText("Cancelar Venda");
         jButton2.setPreferredSize(new java.awt.Dimension(170, 30));
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 140, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 150, 50));
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setText("Cliente:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel3.setForeground(java.awt.Color.white);
-        jLabel3.setText("Produto:");
+        jLabel3.setText("Produto");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
@@ -129,9 +129,9 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jLabel4.setText("Quantidade");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Sans", 1, 15)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel5.setForeground(java.awt.Color.white);
-        jLabel5.setText("Data:");
+        jLabel5.setText("Data");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, 40));
 
         try {
@@ -139,6 +139,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextData.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jFormattedTextData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFormattedTextDataActionPerformed(evt);
@@ -148,7 +149,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel6.setForeground(java.awt.Color.white);
-        jLabel6.setText("Valor unitário:");
+        jLabel6.setText("Valor unitário");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
 
         jTextValorUnitario.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
@@ -156,7 +157,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel7.setForeground(java.awt.Color.white);
-        jLabel7.setText("Parcelas:");
+        jLabel7.setText("Parcelas");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, 30));
 
         jComboParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -169,7 +170,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel8.setForeground(java.awt.Color.white);
-        jLabel8.setText("Valor total:");
+        jLabel8.setText("Valor total");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, -1, -1));
 
         jTextFieldValorTotal.setFont(new java.awt.Font("Lucida Sans", 0, 15)); // NOI18N

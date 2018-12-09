@@ -12,7 +12,9 @@ import easyNatura.view.Login;
  *
  * @author pedro
  */
-public class EasyNatura {
+
+
+public class EasyNatura { 
     
     public static void main(String[] args){
         Banco.inicia();

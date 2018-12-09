@@ -22,7 +22,7 @@ public class CadastrarFuncionarioHelper {
     
     public Usuario getUsuario(){
         String nome = view.getjTextFieldNome().getText();
-        String telefone = view.getjTextFieldTelefone().getText();
+        String telefone = view.getjFormattedTel().getText();
         String email = view.getjTextFieldEmail().getText();
         String login = view.getjTextFieldLogin().getText();
         String senha = view.getjPasswordField1().getText();

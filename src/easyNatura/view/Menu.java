@@ -8,6 +8,7 @@ package easyNatura.view;
 import easyNatura.controller.MenuController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -45,6 +46,7 @@ public class Menu extends javax.swing.JFrame {
         cliente = new javax.swing.JMenu();
         cadastrarCliente = new javax.swing.JMenuItem();
         alterarDados = new javax.swing.JMenuItem();
+        listarClientes = new javax.swing.JMenuItem();
         removerCliente = new javax.swing.JMenuItem();
         venda = new javax.swing.JMenu();
         efetuarVenda = new javax.swing.JMenuItem();
@@ -59,6 +61,7 @@ public class Menu extends javax.swing.JFrame {
         removerFuncionario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(750, 421));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -75,7 +78,8 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, 100, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/fundo.jpeg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setRequestFocusEnabled(false);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 410));
 
         cliente.setText("Cliente");
 
@@ -99,7 +103,18 @@ public class Menu extends javax.swing.JFrame {
         });
         cliente.add(alterarDados);
 
+        listarClientes.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        listarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/friend-list.png"))); // NOI18N
+        listarClientes.setText("Listar Clientes");
+        listarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarClientesActionPerformed(evt);
+            }
+        });
+        cliente.add(listarClientes);
+
         removerCliente.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        removerCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/user-remove.png"))); // NOI18N
         removerCliente.setText("Remover Cliente");
         removerCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,6 +172,7 @@ public class Menu extends javax.swing.JFrame {
         estoque.add(listarProdutos);
 
         AlterarDadosProduto.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        AlterarDadosProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/alterar-product.png"))); // NOI18N
         AlterarDadosProduto.setText("Alterar Dados do Produto");
         AlterarDadosProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,6 +182,7 @@ public class Menu extends javax.swing.JFrame {
         estoque.add(AlterarDadosProduto);
 
         removerProduto.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        removerProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/delete.png"))); // NOI18N
         removerProduto.setText("Remover Produto");
         removerProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,6 +206,7 @@ public class Menu extends javax.swing.JFrame {
         Funcionario.add(cadastrarFuncionario1);
 
         removerFuncionario.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        removerFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/delete-fun.png"))); // NOI18N
         removerFuncionario.setText("Remover Funcionário");
         removerFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,6 +302,10 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_removerFuncionarioActionPerformed
 
+    private void listarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarClientesActionPerformed
+      controller.iniciaListarClientes();
+    }//GEN-LAST:event_listarClientesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -333,6 +355,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelData;
     private javax.swing.JLabel jLabelHora;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem listarClientes;
     private javax.swing.JMenuItem listarProdutos;
     private javax.swing.JMenuItem listarVendas;
     private javax.swing.JMenuItem removerCliente;
