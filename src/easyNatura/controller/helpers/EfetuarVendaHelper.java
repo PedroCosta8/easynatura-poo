@@ -42,12 +42,27 @@ public class EfetuarVendaHelper {
         }
     }
     
-    public Venda getVenda(){
+    
+    public void preencherComboBoxQuantidade(ArrayList<Produto> produtos, Produto checar){
+        DefaultComboBoxModel comboBoxModel = (DefaultComboBoxModel) view.getjComboBoxQuantidade().getModel();
+        if(comboBoxModel != null){
+            for(Produto produto : produtos){
+                if(produto.equals(checar)){
+                    for(int i = 1; i <= produto.getQuantidade(); i++){
+                        comboBoxModel.addElement(i);
+                    }
+                }
+            }
+        }
+    }
+    
+
+    
+    public Venda getVenda(int qnt){
         Cliente cliente = (Cliente) view.getjComboBoxCliente().getModel().getSelectedItem();
         Produto produto = (Produto) view.getjComboBoxProduto().getModel().getSelectedItem();
         String data = view.getjFormattedTextField1().getText();
-        int qtd = Integer.parseInt(view.getjTextFieldQuantidade().getText());
-        Venda clone = new Venda(0, cliente, produto, data, qtd);
+        Venda clone = new Venda(0, cliente, produto, data, qnt);
         return clone;
     }
     

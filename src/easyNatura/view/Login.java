@@ -1,23 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package easyNatura.view;
 
 import easyNatura.controller.LoginController;
-import easyNatura.model.DAO.Banco;
-import easyNatura.model.DAO.UsuarioDAO;
-import easyNatura.model.Usuario;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
-import javax.swing.JRootPane;
 import javax.swing.JTextField;
 
-/**
- *
- * @author pedro
- */
 public class Login extends javax.swing.JFrame {
 
     /**

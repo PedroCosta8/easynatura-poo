@@ -31,10 +31,11 @@ public class LoginController {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Usuario usuarioAutenticado = usuarioDAO.selectPorLoginESenha(usuario);
         if(usuarioAutenticado != null){
-            Menu menu = new Menu();
+            Menu menu = new Menu(usuarioAutenticado.getNome());
             menu.setVisible(true);
             this.view.mostraMensagem("Bem-vindo " + usuarioAutenticado.getNome());
             this.view.dispose();
+            
         }
         else{
             this.view.mostraMensagem("Usuário ou Senha inválidos");

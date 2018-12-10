@@ -12,8 +12,9 @@ import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.Timer;
-
 /**
  *
  * @author pedro
@@ -24,10 +25,17 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     private final MenuController controller;
+    private String nome;
     
     public Menu() {
         initComponents();
         controller = new MenuController(this);
+    }
+    
+     public Menu(String nome) {
+        initComponents();
+        controller = new MenuController(this);
+        this.nome = nome;
     }
 
     /**
@@ -41,6 +49,8 @@ public class Menu extends javax.swing.JFrame {
 
         jLabelData = new javax.swing.JLabel();
         jLabelHora = new javax.swing.JLabel();
+        jLabelFuncionario = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         cliente = new javax.swing.JMenu();
@@ -59,6 +69,8 @@ public class Menu extends javax.swing.JFrame {
         Funcionario = new javax.swing.JMenu();
         cadastrarFuncionario1 = new javax.swing.JMenuItem();
         removerFuncionario = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(750, 421));
@@ -76,6 +88,15 @@ public class Menu extends javax.swing.JFrame {
         jLabelHora.setFont(new java.awt.Font("Tlwg Typist", 1, 18)); // NOI18N
         jLabelHora.setForeground(java.awt.Color.white);
         getContentPane().add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, 100, 20));
+
+        jLabelFuncionario.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        jLabelFuncionario.setForeground(new java.awt.Color(40, 203, 40));
+        getContentPane().add(jLabelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 110, 20));
+
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        jLabel3.setForeground(java.awt.Color.white);
+        jLabel3.setText("Funcionário:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/fundo.jpeg"))); // NOI18N
         jLabel1.setRequestFocusEnabled(false);
@@ -198,6 +219,7 @@ public class Menu extends javax.swing.JFrame {
         cadastrarFuncionario1.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         cadastrarFuncionario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/add-funcionario-ico.png"))); // NOI18N
         cadastrarFuncionario1.setText("Cadastrar Funcionário");
+        cadastrarFuncionario1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cadastrarFuncionario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastrarFuncionario1ActionPerformed(evt);
@@ -216,6 +238,21 @@ public class Menu extends javax.swing.JFrame {
         Funcionario.add(removerFuncionario);
 
         jMenuBar1.add(Funcionario);
+
+        jMenu1.setText("Logout");
+
+        jMenuItem1.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/exit.png"))); // NOI18N
+        jMenuItem1.setText("Sair");
+        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -280,6 +317,9 @@ public class Menu extends javax.swing.JFrame {
         // HORA
         Timer timer = new Timer(1000, new hora());
         timer.start();
+        System.out.println(getJLabelFuncionario());
+        jLabelFuncionario.setText(getJLabelFuncionario());
+
     }//GEN-LAST:event_formWindowOpened
 
     private void AlterarDadosProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarDadosProdutoActionPerformed
@@ -305,6 +345,12 @@ public class Menu extends javax.swing.JFrame {
     private void listarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarClientesActionPerformed
       controller.iniciaListarClientes();
     }//GEN-LAST:event_listarClientesActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       Login loginView = new Login();
+       loginView.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,9 +398,13 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem efetuarVenda;
     private javax.swing.JMenu estoque;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelData;
+    private javax.swing.JLabel jLabelFuncionario;
     private javax.swing.JLabel jLabelHora;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem listarClientes;
     private javax.swing.JMenuItem listarProdutos;
     private javax.swing.JMenuItem listarVendas;
@@ -363,4 +413,13 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem removerProduto;
     private javax.swing.JMenu venda;
     // End of variables declaration//GEN-END:variables
+
+    public void setJLabelFuncionario(String nome){
+         this.nome = nome;
+    }
+    
+    public String getJLabelFuncionario(){
+        return nome;
+    }
+
 }

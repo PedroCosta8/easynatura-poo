@@ -83,7 +83,6 @@ public class Venda {
         this.quantidade = quantidade;
     }
     
-    
     public double valorTotal(){
         return this.getProduto().getValor() * this.getQuantidade();
     }
