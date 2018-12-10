@@ -52,6 +52,7 @@ public class AlterarDadosProdutoController {
                   produtos.get(i).setQuantidade(Integer.parseInt(view.getjTextFieldQtd().getText()));
                   boolean ver = produtoDAO.atualizar(produtos.get(i)); //metodo de persistencia de dados;
                   if(ver){
+                      JOptionPane.showMessageDialog(null, "Dados alterados com sucesso");
                       view.dispose();
                   }
                   else{

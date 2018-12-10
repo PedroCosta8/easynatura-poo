@@ -46,6 +46,7 @@ public class RemoverProdutoController {
                if(produtos.get(i).getId() == produtoJcCombobox.getId()){
                    boolean ver = produtoDAO.deletar(produtos.get(i));
                   if(ver){
+                      JOptionPane.showMessageDialog(null, "Produto removido com sucesso");
                       view.dispose();
                   }
                   else{

@@ -6,6 +6,7 @@
 package easyNatura.view;
 
 import easyNatura.controller.EfetuarVendaController;
+import easyNatura.exceptions.QuantidadeInvalidaException;
 import easyNatura.model.Produto;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,7 @@ import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 
@@ -55,10 +57,6 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jFormattedTextData = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextValorUnitario = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jComboParcelas = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        jTextFieldValorTotal = new javax.swing.JTextField();
         jLabelHora = new javax.swing.JLabel();
         jLabelData = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -106,7 +104,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 150, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 150, 50));
 
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(169, 0, 4));
@@ -117,7 +115,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 150, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 150, 50));
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);
@@ -137,7 +135,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel5.setForeground(java.awt.Color.white);
         jLabel5.setText("Data");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, 40));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, 40));
 
         try {
             jFormattedTextData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -150,7 +148,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
                 jFormattedTextDataActionPerformed(evt);
             }
         });
-        getContentPane().add(jFormattedTextData, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 90, -1));
+        getContentPane().add(jFormattedTextData, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 90, -1));
 
         jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel6.setForeground(java.awt.Color.white);
@@ -159,27 +157,6 @@ public class EfetuarVenda extends javax.swing.JFrame {
 
         jTextValorUnitario.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         getContentPane().add(jTextValorUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 100, -1));
-
-        jLabel7.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel7.setForeground(java.awt.Color.white);
-        jLabel7.setText("Parcelas");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, 30));
-
-        jComboParcelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboParcelas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboParcelasActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel8.setForeground(java.awt.Color.white);
-        jLabel8.setText("Valor total");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, -1, -1));
-
-        jTextFieldValorTotal.setFont(new java.awt.Font("Lucida Sans", 0, 15)); // NOI18N
-        getContentPane().add(jTextFieldValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 100, 30));
 
         jLabelHora.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         jLabelHora.setForeground(java.awt.Color.white);
@@ -207,13 +184,16 @@ public class EfetuarVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldQuantidadeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        controller.efetuarVenda();
-        // TODO add your handling code here:
+        try {
+            controller.efetuarVenda();
+            // TODO add your handling code here:
+        } catch (QuantidadeInvalidaException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Dados inválidos");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jComboParcelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboParcelasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboParcelasActionPerformed
 
     
     
@@ -249,7 +229,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
 
     private void jComboBoxProdutoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxProdutoItemStateChanged
         Produto produtoJcBox = (Produto) this.getjComboBoxProduto().getModel().getSelectedItem();
-        controller.valorUniETotal(produtoJcBox);
+        controller.getValorUnitario(produtoJcBox);
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxProdutoItemStateChanged
 
@@ -298,7 +278,6 @@ public class EfetuarVenda extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBoxCliente;
     private javax.swing.JComboBox<String> jComboBoxProduto;
-    private javax.swing.JComboBox<String> jComboParcelas;
     private javax.swing.JFormattedTextField jFormattedTextData;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -306,12 +285,9 @@ public class EfetuarVenda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelData;
     private javax.swing.JLabel jLabelHora;
     private javax.swing.JTextField jTextFieldQuantidade;
-    private javax.swing.JTextField jTextFieldValorTotal;
     private javax.swing.JTextField jTextValorUnitario;
     // End of variables declaration//GEN-END:variables
 
@@ -353,13 +329,6 @@ public class EfetuarVenda extends javax.swing.JFrame {
         this.jTextFieldQuantidade = jTextFieldQuantidade;
     }
 
-    public JTextField getjTextField1() {
-        return jTextFieldValorTotal;
-    }
-
-    public void setjTextField1(JTextField jTextField1) {
-        this.jTextFieldValorTotal = jTextField1;
-    }
 
     public JTextField getjTextValorUnitario() {
         return jTextValorUnitario;

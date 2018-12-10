@@ -11,6 +11,7 @@ import easyNatura.exceptions.SenhaInvalidaException;
 import easyNatura.model.DAO.UsuarioDAO;
 import easyNatura.model.Usuario;
 import easyNatura.view.CadastrarFuncionario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,9 +29,9 @@ public class CadastrarFuncionarioController {
     
     public void cadastrar() throws SenhaInvalidaException, EmailInvalidoException{ 
         Usuario usuario = helper.getUsuario();
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        
+        UsuarioDAO usuarioDAO = new UsuarioDAO(); 
         usuarioDAO.inserir(usuario);
+        JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso");
         view.dispose();
     }
     

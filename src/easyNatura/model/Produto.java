@@ -23,9 +23,9 @@ public class Produto {
             ValorInvalidoException{
         this.nome = nome;
         this.id = codigo;
-        if(valor <= 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
+        if(valor < 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
         this.valor = valor;
-        if(quantidade <= 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
+        if(quantidade < 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
         this.quantidade = quantidade;
     }
 
@@ -50,7 +50,7 @@ public class Produto {
     }
 
     public void setValor(double valor) throws ValorInvalidoException{
-        if(valor <= 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
+        if(valor < 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
         this.valor = valor;
     }
 
@@ -59,7 +59,7 @@ public class Produto {
     }
 
     public void setQuantidade(int quantidade) throws QuantidadeInvalidaException{
-        if(quantidade <= 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
+        if(quantidade < 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
         this.quantidade = quantidade;
     }
 

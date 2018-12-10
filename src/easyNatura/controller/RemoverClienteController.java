@@ -46,6 +46,7 @@ public class RemoverClienteController {
                if(clientes.get(i).getId() == clienteJcBox.getId()){
                    boolean ver = clienteDAO.deletar(clientes.get(i));
                   if(ver){
+                      JOptionPane.showMessageDialog(null, "Cliente removido com sucesso");
                       view.dispose();
                   }
                   else{
