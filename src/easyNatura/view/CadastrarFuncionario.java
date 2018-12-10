@@ -6,7 +6,11 @@
 package easyNatura.view;
 
 import easyNatura.controller.CadastrarFuncionarioController;
+import easyNatura.exceptions.SenhaInvalidaException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -130,7 +134,14 @@ public class CadastrarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      controller.cadastrar();
+        try {
+            controller.cadastrar();
+        } catch (SenhaInvalidaException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Dados inválidos");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

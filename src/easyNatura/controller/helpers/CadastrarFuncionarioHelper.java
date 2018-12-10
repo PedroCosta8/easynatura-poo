@@ -5,6 +5,7 @@
  */
 package easyNatura.controller.helpers;
 
+import easyNatura.exceptions.SenhaInvalidaException;
 import easyNatura.model.Usuario;
 import easyNatura.view.CadastrarFuncionario;
 
@@ -20,7 +21,7 @@ public class CadastrarFuncionarioHelper {
         this.view = view;
     }
     
-    public Usuario getUsuario(){
+    public Usuario getUsuario() throws SenhaInvalidaException{
         String nome = view.getjTextFieldNome().getText();
         String telefone = view.getjFormattedTel().getText();
         String email = view.getjTextFieldEmail().getText();

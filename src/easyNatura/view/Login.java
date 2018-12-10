@@ -6,9 +6,12 @@
 package easyNatura.view;
 
 import easyNatura.controller.LoginController;
+import easyNatura.exceptions.SenhaInvalidaException;
 import easyNatura.model.DAO.Banco;
 import easyNatura.model.DAO.UsuarioDAO;
 import easyNatura.model.Usuario;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JRootPane;
@@ -139,8 +142,12 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextLoginActionPerformed
 
     private void jEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEntrarActionPerformed
-        controller.entrarSistema();
-        // TODO add your handling code here:
+        try {
+            controller.entrarSistema();
+            // TODO add your handling code here:
+        } catch (SenhaInvalidaException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
     }//GEN-LAST:event_jEntrarActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
