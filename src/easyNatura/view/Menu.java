@@ -41,6 +41,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabelData = new javax.swing.JLabel();
         jLabelHora = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         cliente = new javax.swing.JMenu();
@@ -61,6 +62,7 @@ public class Menu extends javax.swing.JFrame {
         removerFuncionario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("EasyNatura - Menu");
         setPreferredSize(new java.awt.Dimension(750, 421));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -76,6 +78,14 @@ public class Menu extends javax.swing.JFrame {
         jLabelHora.setFont(new java.awt.Font("Tlwg Typist", 1, 18)); // NOI18N
         jLabelHora.setForeground(java.awt.Color.white);
         getContentPane().add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, 100, 20));
+
+        jButton1.setText("logout");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/fundo.jpeg"))); // NOI18N
         jLabel1.setRequestFocusEnabled(false);
@@ -306,6 +316,12 @@ public class Menu extends javax.swing.JFrame {
       controller.iniciaListarClientes();
     }//GEN-LAST:event_listarClientesActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+        controller.iniciaLogin();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -351,6 +367,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu cliente;
     private javax.swing.JMenuItem efetuarVenda;
     private javax.swing.JMenu estoque;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelData;
     private javax.swing.JLabel jLabelHora;

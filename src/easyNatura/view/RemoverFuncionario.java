@@ -57,7 +57,7 @@ public class RemoverFuncionario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Remover Funcionário - EasyNatura");
+        setTitle("EasyNatura - Remover Funcionário");
         setMinimumSize(new java.awt.Dimension(750, 421));
         setPreferredSize(new java.awt.Dimension(750, 421));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,7 +83,7 @@ public class RemoverFuncionario extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(169, 0, 4));
@@ -93,7 +93,7 @@ public class RemoverFuncionario extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);

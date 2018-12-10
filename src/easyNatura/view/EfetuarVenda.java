@@ -64,7 +64,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Realizar Venda - EasyNatura");
+        setTitle("EasyNatura - Efetuar Venda");
         setPreferredSize(new java.awt.Dimension(750, 421));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -112,6 +112,11 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(169, 0, 4));
         jButton2.setText("Cancelar Venda");
         jButton2.setPreferredSize(new java.awt.Dimension(170, 30));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 150, 50));
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
@@ -247,6 +252,11 @@ public class EfetuarVenda extends javax.swing.JFrame {
         controller.valorUniETotal(produtoJcBox);
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxProdutoItemStateChanged
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

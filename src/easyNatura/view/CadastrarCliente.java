@@ -54,7 +54,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastrar Cliente - EasyNatura");
+        setTitle("EasyNatura - CadastrarCliente");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextFieldNome.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N

@@ -10,8 +10,6 @@ import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.model.Cliente;
 import easyNatura.model.DAO.ClienteDAO;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
@@ -61,6 +59,7 @@ public class AlterarDadosCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("EasyNatura - Atualizar Cliente");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -176,7 +175,6 @@ public class AlterarDadosCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        JOptionPane.showMessageDialog(null,"Cancelando...");
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 

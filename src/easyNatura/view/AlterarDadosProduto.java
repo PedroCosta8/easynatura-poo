@@ -86,6 +86,7 @@ public class AlterarDadosProduto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("EasyNatura - Atualizar Produto");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBoxProdutos.addItemListener(new java.awt.event.ItemListener() {

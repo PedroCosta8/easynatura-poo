@@ -21,7 +21,7 @@ public class Usuario extends Pessoa{
     throws SenhaInvalidaException, EmailInvalidoException{
         super(id, nome, telefone, email);
         this.login = login;
-        if(senha.length() < 8) throw new SenhaInvalidaException("Senha inválida\nSenha deve conter mais de 8 digitos");
+        if(senha.length() < 8) throw new SenhaInvalidaException("Senha inválida\nSenha deve conter pelo menos 8 caracteres");
         this.senha = senha;
     }
 
