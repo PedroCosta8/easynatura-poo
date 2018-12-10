@@ -49,7 +49,8 @@ public class Produto {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(double valor) throws ValorInvalidoException{
+        if(valor <= 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
         this.valor = valor;
     }
 
@@ -57,7 +58,8 @@ public class Produto {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(int quantidade) throws QuantidadeInvalidaException{
+        if(quantidade <= 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
         this.quantidade = quantidade;
     }
 

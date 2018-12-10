@@ -6,6 +6,7 @@
 package easyNatura.controller;
 
 import easyNatura.controller.helpers.CadastrarFuncionarioHelper;
+import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.exceptions.SenhaInvalidaException;
 import easyNatura.model.DAO.UsuarioDAO;
 import easyNatura.model.Usuario;
@@ -25,7 +26,7 @@ public class CadastrarFuncionarioController {
         helper = new CadastrarFuncionarioHelper(view);
     }
     
-    public void cadastrar() throws SenhaInvalidaException{ 
+    public void cadastrar() throws SenhaInvalidaException, EmailInvalidoException{ 
         Usuario usuario = helper.getUsuario();
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         

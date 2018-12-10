@@ -5,6 +5,7 @@
  */
 package easyNatura.controller.helpers;
 
+import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.exceptions.SenhaInvalidaException;
 import easyNatura.model.Usuario;
 import easyNatura.view.Login;
@@ -21,11 +22,11 @@ public class LoginHelper {
         this.view = view;
     }
     
-    public Usuario getUsuario() throws SenhaInvalidaException{
+    public Usuario getUsuario() throws SenhaInvalidaException, EmailInvalidoException{
         String login = view.getLogin().getText();
         String senha = view.getSenha().getText();
         
-        Usuario clone = new Usuario(0,"null", "", "", login, senha);
+        Usuario clone = new Usuario(0,"null", "", "admin@.com", login, senha);
         return clone;
     }
     

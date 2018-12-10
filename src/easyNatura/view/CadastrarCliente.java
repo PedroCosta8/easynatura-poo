@@ -6,7 +6,11 @@
 package easyNatura.view;
 
 import easyNatura.controller.CadastrarClienteController;
+import easyNatura.exceptions.EmailInvalidoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -147,9 +151,16 @@ public class CadastrarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     private void jButtonCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarClienteActionPerformed
-        controller.cadastrar();
-        //tem que ter mensagem de confirmação
-        // TODO add your handling code here:
+        try {
+            controller.cadastrar();
+            //tem que ter mensagem de confirmação
+            // TODO add your handling code here:
+        } catch (EmailInvalidoException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Dados Inválidos");
+        }
     }//GEN-LAST:event_jButtonCadastrarClienteActionPerformed
 
     private void jButtonCancelarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarClienteActionPerformed

@@ -5,6 +5,7 @@
  */
 package easyNatura.controller.helpers;
 
+import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.model.Cliente;
 import easyNatura.view.CadastrarCliente;
 
@@ -20,7 +21,7 @@ public class CadastrarClienteHelper {
         this.view = view;
     }
     
-    public Cliente getCliente(){
+    public Cliente getCliente() throws EmailInvalidoException{
         String nome = view.getjTextFieldNome().getText();
         String telefone = view.getjTextFieldTelefone().getText();
         String email = view.getjTextFieldEmail().getText();

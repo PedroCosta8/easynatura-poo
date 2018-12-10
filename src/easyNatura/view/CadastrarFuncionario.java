@@ -6,6 +6,7 @@
 package easyNatura.view;
 
 import easyNatura.controller.CadastrarFuncionarioController;
+import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.exceptions.SenhaInvalidaException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -137,6 +138,9 @@ public class CadastrarFuncionario extends javax.swing.JFrame {
         try {
             controller.cadastrar();
         } catch (SenhaInvalidaException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        catch (EmailInvalidoException ex){
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
         catch(Exception ex){

@@ -5,6 +5,8 @@
  */
 package easyNatura.model;
 
+import easyNatura.exceptions.EmailInvalidoException;
+
 /**
  *
  * @author pedro
@@ -14,7 +16,7 @@ public class Cliente extends Pessoa{
     private String endereco;
     private String cep;
     
-    public Cliente(int id, String nome, String telefone, String email, String endereco, String cep) {
+    public Cliente(int id, String nome, String telefone, String email, String endereco, String cep) throws EmailInvalidoException {
         super(id, nome, telefone, email);
         this.endereco = endereco;
         this.cep = cep;

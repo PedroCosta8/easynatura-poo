@@ -6,9 +6,12 @@
 package easyNatura.view;
 
 import easyNatura.controller.AlterarDadosClienteController;
+import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.model.Cliente;
 import easyNatura.model.DAO.ClienteDAO;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
@@ -199,7 +202,6 @@ public class AlterarDadosCliente extends javax.swing.JFrame {
                if(clientes.get(i).getId() == clienteJcBox.getId()){
                    jTextFieldNome.setText(clientes.get(i).getNome());
                    jFormattedTextEdTel.setText(clientes.get(i).getTelefone());
-                   //System.out.println("Email: " + clientes.get(i).getEmail());
                    jTextFieldEmail.setText(clientes.get(i).getEmail());
                    jTextFieldEnd.setText(clientes.get(i).getEndereco());
                    jFormattedTextFieldCEP.setText(clientes.get(i).getCep());
@@ -210,7 +212,14 @@ public class AlterarDadosCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxClienteItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       controller.alterarDadosCliente();
+        try {
+            controller.alterarDadosCliente();
+        } catch (EmailInvalidoException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Dados Inválidos");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed

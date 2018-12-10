@@ -5,6 +5,7 @@
  */
 package easyNatura.model;
 
+import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.exceptions.SenhaInvalidaException;
 
 /**
@@ -17,10 +18,10 @@ public class Usuario extends Pessoa{
     private String senha;
 
     public Usuario(int id, String nome, String telefone, String email, String login, String senha) 
-    throws SenhaInvalidaException{
+    throws SenhaInvalidaException, EmailInvalidoException{
         super(id, nome, telefone, email);
         this.login = login;
-        if(senha.length() < 8) throw new SenhaInvalidaException("Senha innválida\nSenha deve conter mais de 8 digitos");
+        if(senha.length() < 8) throw new SenhaInvalidaException("Senha inválida\nSenha deve conter mais de 8 digitos");
         this.senha = senha;
     }
 

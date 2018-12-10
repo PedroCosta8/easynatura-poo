@@ -6,10 +6,15 @@
 package easyNatura.view;
 
 import easyNatura.controller.AlterarDadosProdutoController;
+import easyNatura.exceptions.QuantidadeInvalidaException;
+import easyNatura.exceptions.ValorInvalidoException;
 import easyNatura.model.DAO.ProdutoDAO;
 import easyNatura.model.Produto;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -146,8 +151,17 @@ public class AlterarDadosProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxProdutosItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        controller.alterarDadosProduto();
-        // TODO add your handling code here:
+        try {
+            controller.alterarDadosProduto();
+            // TODO add your handling code here:
+        } catch (QuantidadeInvalidaException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (ValorInvalidoException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        catch (Exception ex){
+            JOptionPane.showMessageDialog(null, "Dados inválidos");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

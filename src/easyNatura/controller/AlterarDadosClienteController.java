@@ -6,6 +6,7 @@
 package easyNatura.controller;
 
 import easyNatura.controller.helpers.AlterarDadosClienteHelper;
+import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.view.AlterarDadosCliente;
 import easyNatura.model.Cliente;
 import easyNatura.model.DAO.ClienteDAO;
@@ -36,7 +37,7 @@ public class AlterarDadosClienteController {
         }
    }
    
-   public void alterarDadosCliente(){
+   public void alterarDadosCliente() throws EmailInvalidoException{
        ClienteDAO clienteDAO = new ClienteDAO();
        ArrayList <Cliente> clientes = clienteDAO.retornaTodos();
        //abaixo é feito uma conversão de item do combobox para um objeto cliente

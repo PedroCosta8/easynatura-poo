@@ -6,6 +6,7 @@
 package easyNatura.view;
 
 import easyNatura.controller.LoginController;
+import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.exceptions.SenhaInvalidaException;
 import easyNatura.model.DAO.Banco;
 import easyNatura.model.DAO.UsuarioDAO;
@@ -147,6 +148,8 @@ public class Login extends javax.swing.JFrame {
             // TODO add your handling code here:
         } catch (SenhaInvalidaException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (EmailInvalidoException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jEntrarActionPerformed
 
