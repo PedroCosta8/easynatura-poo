@@ -5,6 +5,9 @@
  */
 package easyNatura.model;
 
+import easyNatura.exceptions.QuantidadeInvalidaException;
+import easyNatura.exceptions.ValorInvalidoException;
+
 /**
  *
  * @author pedro
@@ -16,10 +19,13 @@ public class Produto {
     private double valor;
     private int quantidade;
 
-    public Produto(int codigo, String nome, double valor, int quantidade) {
+    public Produto(int codigo, String nome, double valor, int quantidade) throws QuantidadeInvalidaException,
+            ValorInvalidoException{
         this.nome = nome;
         this.id = codigo;
+        if(valor <= 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
         this.valor = valor;
+        if(quantidade <= 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
         this.quantidade = quantidade;
     }
 

@@ -6,6 +6,11 @@
 package easyNatura.view;
 
 import easyNatura.controller.CadastrarProdutoController;
+import easyNatura.exceptions.QuantidadeInvalidaException;
+import easyNatura.exceptions.ValorInvalidoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -111,8 +116,17 @@ public class CadastrarProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        controller.cadastrar();
-        // TODO add your handling code here:
+        try {
+            controller.cadastrar();
+            // TODO add your handling code here:
+        } catch (QuantidadeInvalidaException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (ValorInvalidoException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Dados inválidos");
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

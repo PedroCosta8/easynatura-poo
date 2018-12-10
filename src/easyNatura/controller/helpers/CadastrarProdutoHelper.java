@@ -5,8 +5,11 @@
  */
 package easyNatura.controller.helpers;
 
+import easyNatura.exceptions.QuantidadeInvalidaException;
+import easyNatura.exceptions.ValorInvalidoException;
 import easyNatura.model.Produto;
 import easyNatura.view.CadastrarProduto;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,13 +23,26 @@ public class CadastrarProdutoHelper {
         this.view = view;
     }
     
-    public Produto getProduto(){
-        String nome = view.getjTextFieldNome().getText();
-        double valor = Double.parseDouble(view.getjTextFieldValor().getText());
-        int qtd = Integer.parseInt(view.getjTextFieldQuantidade().getText());
+    public Produto getProduto() throws QuantidadeInvalidaException, ValorInvalidoException,
+            NumberFormatException{
+//        try{
+            String nome = view.getjTextFieldNome().getText();
+            double valor = Double.parseDouble(view.getjTextFieldValor().getText());
+            int qtd = Integer.parseInt(view.getjTextFieldQuantidade().getText());
+            Produto clone = new Produto(0, nome, valor, qtd);
+            return clone;
+//        }
+//        catch(NumberFormatException ex){
+//            JOptionPane.showMessageDialog(null, "Dados inválidos");
+//        }
+//        catch(ValorInvalidoException ex){
+//            JOptionPane.showMessageDialog(null, ex.getMessage());
+//        }
+//        catch(QuantidadeInvalidaException ex){
+//            JOptionPane.showMessageDialog(null, ex.getMessage());
+//        }
+//        return null;
         
-        Produto clone = new Produto(0, nome, valor, qtd);
-        return clone;
     }
     
     public void setProduto(Produto clone){

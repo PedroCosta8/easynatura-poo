@@ -6,11 +6,12 @@
 package easyNatura.controller;
 
 import easyNatura.controller.helpers.CadastrarProdutoHelper;
-import easyNatura.model.DAO.Banco;
+import easyNatura.exceptions.QuantidadeInvalidaException;
+import easyNatura.exceptions.ValorInvalidoException;
 import easyNatura.model.DAO.ProdutoDAO;
 import easyNatura.model.Produto;
 import easyNatura.view.CadastrarProduto;
-import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,23 +27,21 @@ public class CadastrarProdutoController {
         helper = new CadastrarProdutoHelper(view);
     }
     
-    public void cadastrar(){
-        Produto produto = helper.getProduto();
+    public void cadastrar() throws QuantidadeInvalidaException, ValorInvalidoException, 
+            NumberFormatException{
+//        try{
+            Produto produto = helper.getProduto();
+            ProdutoDAO produtoDAO = new ProdutoDAO();
+            produtoDAO.inserir(produto);
+            view.dispose(); 
+//        } catch (QuantidadeInvalidaException ex) {
+//            JOptionPane.showMessageDialog(null, ex.getMessage());
+//        } catch (ValorInvalidoException ex) {
+//            JOptionPane.showMessageDialog(null, ex.getMessage());
+//        } catch (NumberFormatException ex) {
+//            JOptionPane.showMessageDialog(null, "Dados inválidos");
+//        }
         
-        ProdutoDAO produtoDAO = new ProdutoDAO();
-        produtoDAO.inserir(produto);
-//        ArrayList<Produto> listaProdutos = Banco.produtos;
-//
-//              for(int i = 0; i < listaProdutos.size(); i++){
-//                  
-//                System.out.println(listaProdutos.get(i).getId());
-//                System.out.println(listaProdutos.get(i).getNome());
-//                System.out.println(listaProdutos.get(i).getValor());
-//                System.out.println(listaProdutos.get(i).getQuantidade()
-//                );
-//              }
-//        System.out.println(listaProdutos.size;
-        view.dispose();
     }
     
 }
