@@ -23,6 +23,7 @@ public class EfetuarVendaController {
     
     private final EfetuarVenda view;
     private final EfetuarVendaHelper helper;
+    int qnt;
 
     public EfetuarVendaController(EfetuarVenda view) {
         this.view = view;
@@ -52,7 +53,7 @@ public class EfetuarVendaController {
     }
     
     public void efetuarVenda(){
-        Venda venda = helper.getVenda();
+        Venda venda = helper.getVenda(qnt);
         VendaDAO vendaDAO = new VendaDAO();
         vendaDAO.inserir(venda);
         view.dispose();
@@ -64,9 +65,14 @@ public class EfetuarVendaController {
         if(produtos != null){
             for(int i = 0; i < produtos.size(); i++){
                 if(produtos.get(i).getId() == produtojcBox.getId()){
-                    view.getjTextValorUnitario().setText("R$: "+ produtos.get(i).getValor());    
+                    view.getjTextValorUnitario().setText("R$: "+ produtos.get(i).getValor());
+                    this.helper.preencherComboBoxQuantidade(produtos, produtojcBox);
                 }
             }
         }
+    }
+    public void valorTotal(String produtojcBox, double valor){
+        qnt = Integer.parseInt(produtojcBox);
+        view.getjTextFieldValorTotal().setText("R$: " + (valor * qnt));
     }
 }

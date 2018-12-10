@@ -6,9 +6,9 @@
 package easyNatura.controller;
 
 import easyNatura.controller.helpers.LoginHelper;
-import easyNatura.exceptions.EmailInvalidoException;
-import easyNatura.exceptions.SenhaInvalidaException;
 import easyNatura.model.DAO.UsuarioDAO;
+import easyNatura.exceptions.SenhaInvalidaException;
+import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.model.Usuario;
 import easyNatura.view.Login;
 import easyNatura.view.Menu;
@@ -17,6 +17,7 @@ import easyNatura.view.Menu;
  *
  * @author pedro
  */
+
 public class LoginController {
     
     private final Login view;
@@ -27,16 +28,17 @@ public class LoginController {
         this.helper = new LoginHelper(view);
     }
     
-    public void entrarSistema() throws SenhaInvalidaException, EmailInvalidoException{
+    public void entrarSistema() throws SenhaInvalidaException, EmailInvalidoException {
         Usuario usuario = helper.getUsuario();
         
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Usuario usuarioAutenticado = usuarioDAO.selectPorLoginESenha(usuario);
         if(usuarioAutenticado != null){
-            Menu menu = new Menu();
+            Menu menu = new Menu(usuarioAutenticado.getNome());
             menu.setVisible(true);
             this.view.mostraMensagem("Bem-vindo " + usuarioAutenticado.getNome());
             this.view.dispose();
+            
         }
         else{
             this.view.mostraMensagem("Usuário ou Senha inválidos");

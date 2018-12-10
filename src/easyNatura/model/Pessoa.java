@@ -19,11 +19,11 @@ abstract public class Pessoa {
     protected String email;
 
     public Pessoa(int id, String nome, String telefone, String email) throws
-            EmailInvalidoException{
+            EmailInvalidoException {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
-        if(!email.contains(".com") || !email.contains("@")) throw new EmailInvalidoException("Email inválido");
+ 	if(!email.contains(".com") || !email.contains("@")) throw new EmailInvalidoException("Email inválido");
         this.email = email;
     }
 
@@ -62,8 +62,8 @@ abstract public class Pessoa {
         return email;
     }
 
-    public void setEmail(String email) throws EmailInvalidoException{
-        if(!email.contains(".com") || !email.contains("@")) throw new EmailInvalidoException("Email inválido");
+    public void setEmail(String email) throws EmailInvalidoException {
+	if(!email.contains(".com") || !email.contains("@")) throw new EmailInvalidoException("Email inválido");
         this.email = email;
     }
     

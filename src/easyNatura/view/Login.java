@@ -1,27 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package easyNatura.view;
 
 import easyNatura.controller.LoginController;
-import easyNatura.exceptions.EmailInvalidoException;
-import easyNatura.exceptions.SenhaInvalidaException;
-import easyNatura.model.DAO.Banco;
-import easyNatura.model.DAO.UsuarioDAO;
-import easyNatura.model.Usuario;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
-import javax.swing.JRootPane;
 import javax.swing.JTextField;
+import easyNatura.exceptions.SenhaInvalidaException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import easyNatura.exceptions.EmailInvalidoException;
 
-/**
- *
- * @author pedro
- */
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -150,7 +137,8 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         } catch (EmailInvalidoException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+	}
+        // TODO add your handling code here:
     }//GEN-LAST:event_jEntrarActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed

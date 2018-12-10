@@ -6,6 +6,7 @@
 package easyNatura.model.DAO;
 
 import com.google.gson.Gson;
+import easyNatura.exceptions.QuantidadeInvalidaException;
 import easyNatura.model.Produto;
 import easyNatura.model.Venda;
 import java.io.File;
@@ -21,7 +22,7 @@ import javax.swing.JOptionPane;
  */
 public class VendaDAO {
     
-    public void inserir(Venda venda){
+    public void inserir(Venda venda) throws QuantidadeInvalidaException{
           
         if(venda.getId() == 0){
             Produto p = venda.getProduto();

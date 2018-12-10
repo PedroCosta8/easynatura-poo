@@ -6,12 +6,12 @@
 package easyNatura.view;
 
 import easyNatura.controller.CadastrarProdutoController;
+import javax.swing.JTextField;
 import easyNatura.exceptions.QuantidadeInvalidaException;
 import easyNatura.exceptions.ValorInvalidoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 /**
  *
@@ -51,7 +51,6 @@ public class CadastrarProduto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("EasyNatura - Cadastrar Produto");
         setMinimumSize(new java.awt.Dimension(750, 421));
         setPreferredSize(new java.awt.Dimension(750, 421));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,6 +67,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(10, 169, 0));
         jButton1.setText("Cadastrar");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -78,6 +78,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(169, 0, 4));
         jButton2.setText("Cancelar");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -107,10 +108,10 @@ public class CadastrarProduto extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/produtos.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, -80, 370, 480));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, -50, 370, 480));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/fundo.jpeg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -150, 980, 690));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -140, 980, 690));
 
         pack();
         setLocationRelativeTo(null);
@@ -127,7 +128,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Dados inválidos");
         }
-        
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

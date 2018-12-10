@@ -6,12 +6,12 @@
 package easyNatura.view;
 
 import easyNatura.controller.CadastrarClienteController;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
 import easyNatura.exceptions.EmailInvalidoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 /**
  *
@@ -54,7 +54,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("EasyNatura - CadastrarCliente");
+        setTitle("Cadastrar Cliente - EasyNatura");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextFieldNome.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
@@ -112,7 +112,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, 50));
 
         try {
-            jTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+            jTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) 9####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -161,17 +161,13 @@ public class CadastrarCliente extends javax.swing.JFrame {
         catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Dados Inválidos");
         }
+        //tem que ter mensagem de confirmação
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCadastrarClienteActionPerformed
 
     private void jButtonCancelarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarClienteActionPerformed
         // TODO add your handling code here:
-        dispose();
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu().setVisible(true);
-            }
-        });
-        
+        dispose();        
     }//GEN-LAST:event_jButtonCancelarClienteActionPerformed
 
     private void jTextFieldTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTelefoneActionPerformed

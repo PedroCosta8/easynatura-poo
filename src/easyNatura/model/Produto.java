@@ -8,6 +8,7 @@ package easyNatura.model;
 import easyNatura.exceptions.QuantidadeInvalidaException;
 import easyNatura.exceptions.ValorInvalidoException;
 
+
 /**
  *
  * @author pedro
@@ -23,10 +24,10 @@ public class Produto {
             ValorInvalidoException{
         this.nome = nome;
         this.id = codigo;
-        if(valor <= 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
+  	if(valor <= 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
         this.valor = valor;
-        if(quantidade <= 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
-        this.quantidade = quantidade;
+ if(quantidade <= 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
+	this.quantidade = quantidade;
     }
 
     public int getId() {
@@ -49,8 +50,7 @@ public class Produto {
         return valor;
     }
 
-    public void setValor(double valor) throws ValorInvalidoException{
-        if(valor <= 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
+    public void setValor(double valor) {
         this.valor = valor;
     }
 

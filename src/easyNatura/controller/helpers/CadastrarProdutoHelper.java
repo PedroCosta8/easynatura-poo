@@ -5,9 +5,9 @@
  */
 package easyNatura.controller.helpers;
 
+import easyNatura.model.Produto;
 import easyNatura.exceptions.QuantidadeInvalidaException;
 import easyNatura.exceptions.ValorInvalidoException;
-import easyNatura.model.Produto;
 import easyNatura.view.CadastrarProduto;
 import javax.swing.JOptionPane;
 
@@ -42,7 +42,6 @@ public class CadastrarProdutoHelper {
 //            JOptionPane.showMessageDialog(null, ex.getMessage());
 //        }
 //        return null;
-        
     }
     
     public void setProduto(Produto clone){

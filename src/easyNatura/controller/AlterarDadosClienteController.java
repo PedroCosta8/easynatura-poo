@@ -6,8 +6,8 @@
 package easyNatura.controller;
 
 import easyNatura.controller.helpers.AlterarDadosClienteHelper;
-import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.view.AlterarDadosCliente;
+import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.model.Cliente;
 import easyNatura.model.DAO.ClienteDAO;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ public class AlterarDadosClienteController {
         }
    }
    
-   public void alterarDadosCliente() throws EmailInvalidoException{
+   public void alterarDadosCliente() throws EmailInvalidoException {
        ClienteDAO clienteDAO = new ClienteDAO();
        ArrayList <Cliente> clientes = clienteDAO.retornaTodos();
        //abaixo é feito uma conversão de item do combobox para um objeto cliente
@@ -53,7 +53,6 @@ public class AlterarDadosClienteController {
                   clientes.get(i).setEmail(view.getjTextFieldEmail().getText());
                   boolean ver = clienteDAO.atualizar(clientes.get(i)); //metodo de persistencia de dados;
                   if(ver){
-                      JOptionPane.showMessageDialog(null, "Dados alterados com sucesso");
                       view.dispose();
                   }
                   else{

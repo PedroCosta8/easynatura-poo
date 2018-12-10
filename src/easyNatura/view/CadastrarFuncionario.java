@@ -6,14 +6,14 @@
 package easyNatura.view;
 
 import easyNatura.controller.CadastrarFuncionarioController;
-import easyNatura.exceptions.EmailInvalidoException;
-import easyNatura.exceptions.SenhaInvalidaException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import easyNatura.exceptions.SenhaInvalidaException;
+import easyNatura.exceptions.EmailInvalidoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -138,13 +138,9 @@ public class CadastrarFuncionario extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
             controller.cadastrar();
-        } catch (SenhaInvalidaException ex) {
+        } catch (EmailInvalidoException ex){
             JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-        catch (EmailInvalidoException ex){
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-        catch(Exception ex){
+        } catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Dados inválidos");
         }
     }//GEN-LAST:event_jButton2ActionPerformed

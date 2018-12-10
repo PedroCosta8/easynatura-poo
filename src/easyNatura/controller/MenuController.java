@@ -15,7 +15,6 @@ import easyNatura.view.EfetuarVenda;
 import easyNatura.view.ListarClientes;
 import easyNatura.view.ListarProdutos;
 import easyNatura.view.ListarVendas;
-import easyNatura.view.Login;
 import easyNatura.view.Menu;
 import easyNatura.view.RemoverCliente;
 import easyNatura.view.RemoverFuncionario;
@@ -32,11 +31,6 @@ public class MenuController {
 
     public MenuController(Menu view) {
         this.view = view;
-    }
-    
-    public void iniciaLogin(){
-        Login login = new Login();
-        login.setVisible(true);
     }
     
     public void inciaCadFunc(){ // incia view do cadastro de funcionarios 

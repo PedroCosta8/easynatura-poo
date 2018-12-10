@@ -10,11 +10,11 @@ import easyNatura.exceptions.QuantidadeInvalidaException;
 import easyNatura.exceptions.ValorInvalidoException;
 import easyNatura.model.DAO.ProdutoDAO;
 import easyNatura.model.Produto;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 /**
@@ -28,7 +28,7 @@ public class AlterarDadosProduto extends javax.swing.JFrame {
      */
     private final AlterarDadosProdutoController controller;
     
-    public AlterarDadosProduto() {
+    public AlterarDadosProduto() throws QuantidadeInvalidaException, ValorInvalidoException {
         initComponents();
         controller = new AlterarDadosProdutoController(this);
         iniciar();
@@ -86,7 +86,6 @@ public class AlterarDadosProduto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("EasyNatura - Atualizar Produto");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBoxProdutos.addItemListener(new java.awt.event.ItemListener() {
@@ -152,17 +151,14 @@ public class AlterarDadosProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxProdutosItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
+       try {
             controller.alterarDadosProduto();
             // TODO add your handling code here:
-        } catch (QuantidadeInvalidaException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (ValorInvalidoException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
         }
         catch (Exception ex){
             JOptionPane.showMessageDialog(null, "Dados inválidos");
         }
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -195,7 +191,13 @@ public class AlterarDadosProduto extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AlterarDadosProduto().setVisible(true);
+                try {
+                    new AlterarDadosProduto().setVisible(true);
+                } catch (QuantidadeInvalidaException ex) {
+                    Logger.getLogger(AlterarDadosProduto.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ValorInvalidoException ex) {
+                    Logger.getLogger(AlterarDadosProduto.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

@@ -41,7 +41,7 @@ public class ListarVendas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("EasyNatura - Lista de Vendas");
+        setTitle("Listar Vendas - EasyNatura");
         setPreferredSize(new java.awt.Dimension(750, 421));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

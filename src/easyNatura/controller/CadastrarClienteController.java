@@ -6,11 +6,11 @@
 package easyNatura.controller;
 
 import easyNatura.controller.helpers.CadastrarClienteHelper;
-import easyNatura.exceptions.EmailInvalidoException;
 import easyNatura.model.Cliente;
 import easyNatura.model.DAO.Banco;
 import easyNatura.model.DAO.ClienteDAO;
 import easyNatura.view.CadastrarCliente;
+import easyNatura.exceptions.EmailInvalidoException;
 import java.util.ArrayList;
 
 /**
@@ -27,7 +27,7 @@ public class CadastrarClienteController {
         this.helper = new CadastrarClienteHelper(view);
     }
     
-    public void cadastrar() throws EmailInvalidoException{
+    public void cadastrar() throws EmailInvalidoException {
         Cliente cliente = helper.getCliente();
         ClienteDAO clienteDAO = new ClienteDAO();
         clienteDAO.inserir(cliente);

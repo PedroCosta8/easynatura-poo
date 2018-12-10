@@ -6,11 +6,11 @@
 package easyNatura.controller;
 
 import easyNatura.controller.helpers.AlterarDadosProdutoHelper;
-import easyNatura.exceptions.QuantidadeInvalidaException;
-import easyNatura.exceptions.ValorInvalidoException;
 import easyNatura.model.DAO.ProdutoDAO;
 import easyNatura.model.Produto;
 import easyNatura.view.AlterarDadosProduto;
+import easyNatura.exceptions.QuantidadeInvalidaException;
+import easyNatura.exceptions.ValorInvalidoException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -23,7 +23,8 @@ public class AlterarDadosProdutoController {
     private final AlterarDadosProduto view;
     private final AlterarDadosProdutoHelper helper;
     
-    public AlterarDadosProdutoController(AlterarDadosProduto view){
+    public AlterarDadosProdutoController(AlterarDadosProduto view) throws QuantidadeInvalidaException,
+            ValorInvalidoException {
         this.view = view;
         helper = new AlterarDadosProdutoHelper(view);
     }
@@ -37,8 +38,7 @@ public class AlterarDadosProdutoController {
         }
    }
    
-   public void alterarDadosProduto() throws QuantidadeInvalidaException,
-            ValorInvalidoException{
+   public void alterarDadosProduto() throws QuantidadeInvalidaException{
        ProdutoDAO produtoDAO = new ProdutoDAO();
        ArrayList <Produto> produtos = produtoDAO.retornaTodos();
        //abaixo é feito uma conversão de item do combobox para um objeto cliente
