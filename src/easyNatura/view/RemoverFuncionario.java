@@ -134,11 +134,12 @@ public class RemoverFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxFuncionariosItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        controller.removerFuncionario();
+        this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        controller.removerFuncionario();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
