@@ -13,6 +13,8 @@ import easyNatura.exceptions.ValorInvalidoException;
  *
  * @author pedro
  */
+
+
 public class Produto {
     
     private int id;
@@ -21,12 +23,12 @@ public class Produto {
     private int quantidade;
 
     public Produto(int codigo, String nome, double valor, int quantidade) throws QuantidadeInvalidaException,
-            ValorInvalidoException{
+            ValorInvalidoException {
         this.nome = nome;
         this.id = codigo;
-  	if(valor <= 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
+  	if(valor < 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
         this.valor = valor;
- if(quantidade <= 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
+        if(quantidade < 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
 	this.quantidade = quantidade;
     }
 
@@ -50,7 +52,8 @@ public class Produto {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(double valor) throws ValorInvalidoException {
+        if(valor < 0) throw new ValorInvalidoException("Valor inválido\nValor deve ser maior que 0");
         this.valor = valor;
     }
 
@@ -58,8 +61,8 @@ public class Produto {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) throws QuantidadeInvalidaException{
-        if(quantidade <= 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
+    public void setQuantidade(int quantidade) throws QuantidadeInvalidaException {
+        if(quantidade < 0) throw new QuantidadeInvalidaException("Quantidade inválida\nQuantidade deve ser maior que 0");
         this.quantidade = quantidade;
     }
 

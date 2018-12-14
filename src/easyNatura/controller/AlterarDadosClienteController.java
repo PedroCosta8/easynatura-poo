@@ -53,6 +53,7 @@ public class AlterarDadosClienteController {
                   clientes.get(i).setEmail(view.getjTextFieldEmail().getText());
                   boolean ver = clienteDAO.atualizar(clientes.get(i)); //metodo de persistencia de dados;
                   if(ver){
+                      JOptionPane.showMessageDialog(null, "Dados alterados com sucesso");
                       view.dispose();
                   }
                   else{

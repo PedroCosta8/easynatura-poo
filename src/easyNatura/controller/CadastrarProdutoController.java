@@ -29,20 +29,11 @@ public class CadastrarProdutoController {
         helper = new CadastrarProdutoHelper(view);
     }
 
-    public void cadastrar() throws QuantidadeInvalidaException, ValorInvalidoException,
-            NumberFormatException {
-        try {
-            Produto produto = helper.getProduto();
-            ProdutoDAO produtoDAO = new ProdutoDAO();
-            produtoDAO.inserir(produto);
-            view.dispose();
-        } catch (QuantidadeInvalidaException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (ValorInvalidoException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Dados inválidos");
-        }
+    public void cadastrar() throws QuantidadeInvalidaException, ValorInvalidoException {
+        Produto produto = helper.getProduto();
+        ProdutoDAO produtoDAO = new ProdutoDAO();
+        produtoDAO.inserir(produto);
+        JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
+        view.dispose();
     }
-
 }

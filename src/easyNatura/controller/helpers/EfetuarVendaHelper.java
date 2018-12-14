@@ -56,8 +56,6 @@ public class EfetuarVendaHelper {
         }
     }
     
-
-    
     public Venda getVenda(int qnt){
         Cliente cliente = (Cliente) view.getjComboBoxCliente().getModel().getSelectedItem();
         Produto produto = (Produto) view.getjComboBoxProduto().getModel().getSelectedItem();

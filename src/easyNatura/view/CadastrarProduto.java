@@ -51,6 +51,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("EasyNatura - Cadastrar Produto");
         setMinimumSize(new java.awt.Dimension(750, 421));
         setPreferredSize(new java.awt.Dimension(750, 421));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

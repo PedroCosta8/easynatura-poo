@@ -7,6 +7,7 @@ package easyNatura.controller;
 
 import easyNatura.view.EfetuarVenda;
 import easyNatura.controller.helpers.EfetuarVendaHelper;
+import easyNatura.exceptions.QuantidadeInvalidaException;
 import easyNatura.model.Cliente;
 import easyNatura.model.DAO.ClienteDAO;
 import easyNatura.model.DAO.ProdutoDAO;
@@ -14,7 +15,7 @@ import easyNatura.model.DAO.VendaDAO;
 import easyNatura.model.Produto;
 import easyNatura.model.Venda;
 import java.util.ArrayList;
-import javax.swing.JTextField;
+import javax.swing.JOptionPane;
 /**
  *
  * @author pedro
@@ -52,14 +53,15 @@ public class EfetuarVendaController {
         }
     }
     
-    public void efetuarVenda(){
+    public void efetuarVenda() throws QuantidadeInvalidaException {
         Venda venda = helper.getVenda(qnt);
         VendaDAO vendaDAO = new VendaDAO();
         vendaDAO.inserir(venda);
+        JOptionPane.showMessageDialog(null, "Venda efetuada com sucesso");
         view.dispose();
     }
     
-    public void valorUniETotal(Produto produtojcBox){
+    public void getValorUnitario(Produto produtojcBox){
         ProdutoDAO produtoDAO = new ProdutoDAO();
         ArrayList<Produto> produtos = produtoDAO.retornaTodos();
         if(produtos != null){

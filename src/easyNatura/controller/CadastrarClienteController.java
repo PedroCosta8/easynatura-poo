@@ -7,11 +7,11 @@ package easyNatura.controller;
 
 import easyNatura.controller.helpers.CadastrarClienteHelper;
 import easyNatura.model.Cliente;
-import easyNatura.model.DAO.Banco;
 import easyNatura.model.DAO.ClienteDAO;
 import easyNatura.view.CadastrarCliente;
 import easyNatura.exceptions.EmailInvalidoException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,18 +31,7 @@ public class CadastrarClienteController {
         Cliente cliente = helper.getCliente();
         ClienteDAO clienteDAO = new ClienteDAO();
         clienteDAO.inserir(cliente);
-        /*ArrayList<Cliente> listaClientes = Banco.cliente;;
-
-              for(int i = 0; i < listaClientes.size(); i++){
-                  
-                System.out.println(listaClientes.get(i).getId());
-                System.out.println(listaClientes.get(i).getNome());
-                System.out.println(listaClientes.get(i).getTelefone());
-                System.out.println(listaClientes.get(i).getEmail());
-                System.out.println(listaClientes.get(i).getEndereco());
-                System.out.println(listaClientes.get(i).getCep());
-              }
-        System.out.println(listaClientes.size());*/
+        JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
         view.dispose();
     }
     

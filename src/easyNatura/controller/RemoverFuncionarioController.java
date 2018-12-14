@@ -46,6 +46,7 @@ public class RemoverFuncionarioController {
                if(usuarios.get(i).getId() == usuarioJcBox.getId()){
                    boolean ver = usuarioDAO.deletar(usuarios.get(i));
                   if(ver){
+                      JOptionPane.showMessageDialog(null, "Funcionário removido com sucesso");
                       view.dispose();
                   }
                   else{

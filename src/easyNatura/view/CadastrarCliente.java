@@ -50,11 +50,12 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jTextFieldTelefone = new javax.swing.JFormattedTextField();
         jTextFieldCep = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastrar Cliente - EasyNatura");
+        setTitle("EasyNatura - Cadastrar Cliente");
+        setPreferredSize(new java.awt.Dimension(750, 421));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextFieldNome.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
@@ -74,6 +75,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jButtonCadastrarCliente.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButtonCadastrarCliente.setForeground(new java.awt.Color(10, 169, 0));
         jButtonCadastrarCliente.setText("Cadastrar");
+        jButtonCadastrarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCadastrarClienteActionPerformed(evt);
@@ -84,6 +86,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jButtonCancelarCliente.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButtonCancelarCliente.setForeground(new java.awt.Color(169, 0, 4));
         jButtonCancelarCliente.setText("Cancelar");
+        jButtonCancelarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCancelarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarClienteActionPerformed(evt);
@@ -138,9 +141,13 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jLabel6.setText("CEP:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, 70));
 
+        jLabel7.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel7.setForeground(java.awt.Color.white);
+        jLabel7.setText("Cadastrar Cliente");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/easyNatura/view/imagens/fundo.jpeg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 810, 450));
 
         pack();
         setLocationRelativeTo(null);
@@ -218,7 +225,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JFormattedTextField jTextFieldCep;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEndereco;

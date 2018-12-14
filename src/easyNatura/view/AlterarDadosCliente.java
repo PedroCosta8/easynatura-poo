@@ -59,6 +59,7 @@ public class AlterarDadosCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("EasyNatura - Atualizar Cliente");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -89,7 +90,7 @@ public class AlterarDadosCliente extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel6.setForeground(java.awt.Color.white);
         jLabel6.setText("Endereço:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(10, 169, 0));
@@ -174,8 +175,7 @@ public class AlterarDadosCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        JOptionPane.showMessageDialog(null,"Cancelando...");
-        dispose();
+       dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextFieldEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEndActionPerformed

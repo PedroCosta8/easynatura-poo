@@ -6,6 +6,8 @@
 
 package easyNatura.controller;
 
+import easyNatura.exceptions.QuantidadeInvalidaException;
+import easyNatura.exceptions.ValorInvalidoException;
 import easyNatura.view.AlterarDadosCliente;
 import easyNatura.view.AlterarDadosProduto;
 import easyNatura.view.CadastrarCliente;
@@ -78,7 +80,7 @@ public class MenuController {
         listarP.setVisible(true);
     }
     
-    public void iniciaAltDadosProd(){
+    public void iniciaAltDadosProd() throws QuantidadeInvalidaException, ValorInvalidoException{
         AlterarDadosProduto altDp = new AlterarDadosProduto();
         altDp.setVisible(true);
     }

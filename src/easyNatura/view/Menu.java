@@ -6,13 +6,18 @@
 package easyNatura.view;
 
 import easyNatura.controller.MenuController;
+import easyNatura.exceptions.QuantidadeInvalidaException;
+import easyNatura.exceptions.ValorInvalidoException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 /**
@@ -73,6 +78,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("EasyNatura - Menu");
         setPreferredSize(new java.awt.Dimension(750, 421));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -317,14 +323,21 @@ public class Menu extends javax.swing.JFrame {
         // HORA
         Timer timer = new Timer(1000, new hora());
         timer.start();
-        System.out.println(getJLabelFuncionario());
         jLabelFuncionario.setText(getJLabelFuncionario());
 
     }//GEN-LAST:event_formWindowOpened
 
     private void AlterarDadosProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarDadosProdutoActionPerformed
-        controller.iniciaAltDadosProd();
-        // TODO add your handling code here:
+        try {
+            controller.iniciaAltDadosProd();
+            // TODO add your handling code here:
+        } catch (QuantidadeInvalidaException ex) { 
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (ValorInvalidoException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Dados inválidos");
+        }
     }//GEN-LAST:event_AlterarDadosProdutoActionPerformed
 
     private void removerClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerClienteActionPerformed

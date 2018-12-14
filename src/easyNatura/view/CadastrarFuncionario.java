@@ -58,8 +58,10 @@ public class CadastrarFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("EasyNatura - Cadastrar Funcionário");
-        setPreferredSize(new java.awt.Dimension(750, 421));
+        setPreferredSize(new java.awt.Dimension(750, 420));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextFieldNome.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         getContentPane().add(jTextFieldNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 250, -1));
 
         try {
@@ -68,15 +70,24 @@ public class CadastrarFuncionario extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         jFormattedTel.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
-        getContentPane().add(jFormattedTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 100, -1));
+        getContentPane().add(jFormattedTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 120, -1));
+
+        jTextFieldEmail.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         getContentPane().add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 250, -1));
-        getContentPane().add(jTextFieldLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 100, -1));
+
+        jTextFieldLogin.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        getContentPane().add(jTextFieldLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 120, -1));
+
+        jPasswordField1.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 100, -1));
+
+        jPasswordField2.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 100, -1));
 
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(169, 0, 4));
         jButton1.setText("Cancelar");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -87,6 +98,7 @@ public class CadastrarFuncionario extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(10, 169, 0));
         jButton2.setText("Cadastrar");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -138,6 +150,8 @@ public class CadastrarFuncionario extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
             controller.cadastrar();
+        } catch (SenhaInvalidaException ex){
+            JOptionPane.showMessageDialog(null, ex.getMessage());
         } catch (EmailInvalidoException ex){
             JOptionPane.showMessageDialog(null, ex.getMessage());
         } catch(Exception ex){

@@ -6,6 +6,7 @@
 package easyNatura.view;
 
 import easyNatura.controller.EfetuarVendaController;
+import easyNatura.exceptions.QuantidadeInvalidaException;
 import easyNatura.model.Produto;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,7 @@ import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 
@@ -63,7 +65,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Realizar Venda - EasyNatura");
+        setTitle("EasyNatura - Efetuar Venda");
         setPreferredSize(new java.awt.Dimension(750, 421));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -88,6 +90,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(10, 169, 0));
         jButton1.setText("Efetuar Venda");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -98,6 +101,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(169, 0, 4));
         jButton2.setText("Cancelar Venda");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.setPreferredSize(new java.awt.Dimension(170, 30));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,8 +190,15 @@ public class EfetuarVenda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        controller.efetuarVenda();
-        // TODO add your handling code here:
+        try {
+            controller.efetuarVenda();
+            // TODO add your handling code here:
+        } catch (QuantidadeInvalidaException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Dados inválidos");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
@@ -224,7 +235,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
 
     private void jComboBoxProdutoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxProdutoItemStateChanged
         Produto produtoJcBox = (Produto) this.getjComboBoxProduto().getModel().getSelectedItem();
-        controller.valorUniETotal(produtoJcBox);
+        controller.getValorUnitario(produtoJcBox);
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxProdutoItemStateChanged
 
@@ -333,7 +344,7 @@ public class EfetuarVenda extends javax.swing.JFrame {
     public void setjFormattedTextField1(JFormattedTextField jFormattedTextField1) {
         this.jFormattedTextData = jFormattedTextField1;
     }
-
+    
     public JTextField getjTextFieldValorTotal() {
         return jTextFieldValorTotal;
     }
